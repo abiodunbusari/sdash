@@ -11,7 +11,7 @@ const config: Config = {
       colors:{
         'eerie-black':'#1F1F1F',
         'platinum':'#E3E3E3',
-        'dark-grey':'121212'
+        'dark-grey':'#121212'
       }
     },
   },

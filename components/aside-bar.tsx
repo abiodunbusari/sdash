@@ -4,6 +4,8 @@ import { FaRegUser } from "react-icons/fa";
 import { PiBriefcaseLight } from "react-icons/pi";
 import { SlLock } from "react-icons/sl";
 import { LuLayoutGrid } from "react-icons/lu";
+import { Switch, useMantineTheme } from "@mantine/core";
+import { Moon, Sun1 } from "iconsax-react";
 
 const asideData = [
   {
@@ -64,10 +66,25 @@ const asideData = [
 ];
 
 const AsideBar = () => {
+  const theme = useMantineTheme();
   return (
     <aside className="flex flex-col gap-[54.78px] px-8 border-r-[3px] border-r-[#E3E3E3] pt-[30.25px]">
       <section className="flex flex-col gap-[54.78px]">
-        <Logo />
+        <div className="flex items-center gap-3">
+          <Logo />
+          <Switch
+            py={4}
+            color={theme.colorScheme === 'dark' ? '#2F70F2' : '#2F70F2'}
+            onLabel={<Sun1
+              size="16"
+              color="white"
+            />}
+            offLabel={<Moon
+              size="16"
+              color="white"
+            />}
+          />
+        </div>
 
         <section className="flex flex-col gap-[clamp(33px,5vw,72px)] ">
           {
@@ -89,20 +106,6 @@ const AsideBar = () => {
             ))
           }
         </section>
-
-        {/* <div className="flex flex-col gap-[18px]">
-          <p className="text-eerie-black">Dashboard</p>
-          <Divider className="bg-platinum w-full" />
-          <div className="flex flex-col gap-7 justify-center">
-            {topData.map((item, idx) => (
-              <div className="flex items-center gap-2">
-                <>{item.icon}</>
-                <p>{item.name}</p>
-              </div>
-            ))}
-          </div>
-        </div> */}
-
       </section>
     </aside>
   );
