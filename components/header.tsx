@@ -3,11 +3,11 @@ import React from 'react'
 import { HambergerMenu, Message, Notification, SearchNormal } from 'iconsax-react'
 import { RiSettingsLine } from 'react-icons/ri'
 import { Avatar, TextInput, rem } from '@mantine/core'
-import { InternationalizationSwitch } from '.'
+import { AsideDrawer, InternationalizationSwitch } from '.'
 import { useDisclosure } from '@mantine/hooks'
 
 const Header = () => {
-    // const [opened, { open, close }] = useDisclosure(false);
+    const [opened, { open, close }] = useDisclosure(false);
 
     return (
         <header className="bg-[#F7F7FF] py-[15px] px-[32px] flex justify-between items-center">
@@ -50,7 +50,7 @@ const Header = () => {
                     <Avatar size={34} radius='100%' src='/user.svg' />
                     <p className='text-dark-grey tracking-[-0.32px]'>Alex Smith</p>
                 </div>
-                {/* <HambergerMenu className='cursor-pointer' opened={opened} close={close} onClick={open} /> */}
+                <AsideDrawer opened={opened} close={close} open={open} />
             </div>
         </header>
 

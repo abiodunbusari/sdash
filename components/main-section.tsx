@@ -1,18 +1,21 @@
 import React from 'react'
 import CardNews from './card-news'
+import TransactionDetails from './transaction-details'
+import QuickTransfer from './quick-transfer'
+import { AreaChart } from '.'
 
 const MainSection = () => {
     return (
         <section className="flex-1 flex bg-[#F6F6F6]">
             <div className='flex-1 flex flex-col  px-8 gap-8 pt-[38px]'>
                 <div className='flex gap-9'>
-                    <div className='flex flex-col'>
+                    <div className='flex flex-col gap-[38px]'>
                         <CardNews />
-                        <p>ii</p>
+                        <AreaChart />
                     </div>
-                    <div className='flex flex-col'>
-                        <p>iii</p>
-                        <p>iv</p>
+                    <div className='flex flex-col flex-1 gap-6'>
+                        <TransactionDetails />
+                        <QuickTransfer />
                     </div>
 
                 </div>
