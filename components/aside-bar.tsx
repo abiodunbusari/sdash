@@ -11,96 +11,56 @@ const asideData = [
     name: "Dashboard",
     children: [
       {
-        id:1,
-        icon: <LuLayoutGrid />,
+        id: 1,
+        icon: <LuLayoutGrid size={22} />,
         name: "Home",
       },
-      {id:2,
-        icon: <FaRegUser />,
+      {
+        id: 2,
+        icon: <FaRegUser size={22} />,
         name: "Files",
       },
       {
-        id:3,
-        icon: <PiBriefcaseLight />,
+        id: 3,
+        icon: <PiBriefcaseLight size={22} />,
         name: "Decline Project",
       },
       {
-        id:4,
-        icon: <SlLock />,
+        id: 4,
+        icon: <SlLock size={22} />,
         name: "Management",
       },
-      {id:5, icon: <SlLock />, name: "Database" },
+      { id: 5, icon: <SlLock size={22} />, name: "Database" },
     ],
   },
   {
-    id:2,
-    name:'Customer Data',
-    children:[
-      {id:1, icon: <LuLayoutGrid />, text: "Team Award" },
-  {
-    id:2,
-    icon: <FaRegUser />,
-    name: "Invoice Data",
-  },
-  {
-    id:3,
-    icon: <PiBriefcaseLight />,
-    text: "Settings",
-  },
-  { id:4, icon: <SlLock />, text: "Announcement" },
-  {
-    id:5,
-    icon: <SlLock />,
-    text: "Media Assets",
-  },
-  {
-    id:6,
-    icon: <SlLock />,
-    text: "Client Feedback",
-  }
+    id: 2,
+    name: 'Customer Data',
+    children: [
+      { id: 1, icon: <LuLayoutGrid size={22} />, name: "Team Award" },
+      {
+        id: 2,
+        icon: <FaRegUser size={22} />,
+        name: "Invoice Data",
+      },
+      {
+        id: 3,
+        icon: <PiBriefcaseLight size={22} />,
+        name: "Settings",
+      },
+      { id: 4, icon: <SlLock size={22} />, name: "Announcement" },
+      {
+        id: 5,
+        icon: <SlLock size={22} />,
+        name: "Media Assets",
+      },
+      {
+        id: 6,
+        icon: <SlLock size={22} />,
+        name: "Client Feedback",
+      }
     ]
   }
-];
-
-// const topData = [
-//   {
-//     icon: <LuLayoutGrid />,
-//     name: "Home",
-//   },
-//   {
-//     icon: <FaRegUser />,
-//     name: "Files",
-//   },
-//   {
-//     icon: <PiBriefcaseLight />,
-//     name: "Decline Project",
-//   },
-//   {
-//     icon: <SlLock />,
-//     name: "Management",
-//   },
-//   { icon: <SlLock />, name: "Database" },
-// ];
-
-const bottomData = [
-  { icon: <LuLayoutGrid />, text: "Team Award" },
-  {
-    icon: <FaRegUser />,
-    name: "Invoice Data",
-  },
-  {
-    icon: <PiBriefcaseLight />,
-    text: "Settings",
-  },
-  { icon: <SlLock />, text: "Announcement" },
-  {
-    icon: <SlLock />,
-    text: "Media Assets",
-  },
-  {
-    icon: <SlLock />,
-    text: "Client Feedback",
-  },
 ];
 
 const AsideBar = () => {
@@ -109,22 +69,22 @@ const AsideBar = () => {
       <section className="flex flex-col gap-[54.78px]">
         <Logo />
 
-        <section className="flex flex-col gap-[72px] ">
+        <section className="flex flex-col gap-[clamp(33px,5vw,72px)] ">
           {
-            asideData.map(({name, id, children})=>(
+            asideData.map(({ name, id, children }) => (
               <div className="gap-[18px] flex flex-col" key={id}>
-              <p>{name}</p>
-              <div className="w-full h-[1px] bg-platinum"></div>
-              <ul className="flex flex-col gap-7">
-                {
-                  children.map(({name,icon,id})=>(
-                    <li key={id} className="flex items-center gap-2">
-                      {icon}
-                      {name}
-                    </li>
-                  ))
-                }
-              </ul>
+                <p className=" text-eerie-black text-base font-medium tracking-[-0.32px]">{name}</p>
+                <div className="w-full h-[1px] bg-platinum"></div>
+                <ul className="flex flex-col gap-7">
+                  {
+                    children.map(({ name, icon, id }) => (
+                      <li key={id} className="flex items-center gap-2 cursor-pointer hover:text-[#2F70F2] whitespace-nowrap text-sm text-dark-grey">
+                        {icon}
+                        {name}
+                      </li>
+                    ))
+                  }
+                </ul>
               </div>
             ))
           }

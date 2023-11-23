@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       colors:{
         'eerie-black':'#1F1F1F',
-        'platinum':'#E3E3E3'
+        'platinum':'#E3E3E3',
+        'dark-grey':'121212'
       }
     },
   },
