@@ -1,81 +1,92 @@
-import React from 'react'
+import { ArrowUp2, Profile2User } from "iconsax-react";
+import React from "react";
+// import { IssuedCard, TransactionIcon } from "./icons";
+import { RiArrowUpSFill } from "react-icons/ri";
+import { CardTransfer } from "./icons";
+import CardIssue from "./icons/card-issue";
 
-import { Profile2User } from 'iconsax-react'
-import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri"
-
-const news = [
+const cardList = [
     {
         id: 1,
-        icon: <Profile2User size={20} />,
-        text: 'Active Users',
-        count: '14,7 M',
-        percentage: '32%',
-        percentcolor: '#4EEA7A',
-        trend: <RiArrowUpSFill color='#4EEA7A' size={24} />,
-        textcolor: 'text-[#2F70F2]',
-
+        icon: <Profile2User color="#2F70F2" size={20} />,
+        header: "Active Users",
+        price: "14,7 M",
+        dropIcon: <RiArrowUpSFill color="#4EEA7A" size="24" />,
+        percentage: "32%",
+        color: "#2F70F2",
+        dropcolor: "#4EEA7A",
     },
     {
         id: 2,
-        icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.3333 9.16668C18.325 6.57168 18.2433 5.19584 17.3567 4.31001C16.3808 3.33334 14.8092 3.33334 11.6667 3.33334H8.33334C5.19084 3.33334 3.61917 3.33334 2.64334 4.31001C1.66667 5.28584 1.66667 6.85751 1.66667 10C1.66667 13.1425 1.66667 14.7142 2.64334 15.69C3.61917 16.6667 5.19084 16.6667 8.33334 16.6667H9.58334" stroke="#876AFE" stroke-width="1.5" stroke-linecap="round" />
-            <path d="M12.9167 11.6667V16.6667M12.9167 16.6667L14.5833 15M12.9167 16.6667L11.25 15M16.6667 16.6667V11.6667M16.6667 11.6667L18.3333 13.3334M16.6667 11.6667L15 13.3334" stroke="#876AFE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M8.33334 13.3333H5M1.66667 8.33334H18.3333" stroke="#876AFE" stroke-width="1.5" stroke-linecap="round" />
-        </svg>
-        ,
-        text: 'Transactions',
-        count: '$ 1.234',
-        percentage: '32%',
-        trend: <RiArrowDownSFill />,
-        textcolor: 'text-[#876AFE]',
-        percentcolor: '#D62C2C'
-
+        icon: <CardTransfer />,
+        header: "Transactions Users",
+        price: "$ 1.234.10",
+        dropIcon: (
+            <RiArrowUpSFill color="#D62C2C" size="24" className=" rotate-180" />
+        ),
+        percentage: "32%",
+        color: "#876AFE",
+        dropcolor: "#D62C2C",
     },
     {
         id: 3,
-        icon: <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.66667 10C1.66667 6.85751 1.66667 5.28584 2.64333 4.31001C3.61917 3.33334 5.19083 3.33334 8.33333 3.33334H11.6667C14.8092 3.33334 16.3808 3.33334 17.3567 4.31001C18.3333 5.28584 18.3333 6.85751 18.3333 10C18.3333 13.1425 18.3333 14.7142 17.3567 15.69C16.3808 16.6667 14.8092 16.6667 11.6667 16.6667H8.33333C5.19083 16.6667 3.61917 16.6667 2.64333 15.69C1.66667 14.7142 1.66667 13.1425 1.66667 10Z" stroke="#FFBC02" stroke-width="1.5" />
-            <path d="M8.33333 13.75H5M6.66667 11.25H5M1.66667 8.33334H18.3333" stroke="#FFBC02" stroke-width="1.5" stroke-linecap="round" />
-            <path d="M11.6667 12.5C11.6667 11.7142 11.6667 11.3217 11.9108 11.0775C12.155 10.8333 12.5475 10.8333 13.3333 10.8333C14.1192 10.8333 14.5117 10.8333 14.7558 11.0775C15 11.3217 15 11.7142 15 12.5C15 13.2858 15 13.6783 14.7558 13.9225C14.5117 14.1667 14.1192 14.1667 13.3333 14.1667C12.5475 14.1667 12.155 14.1667 11.9108 13.9225C11.6667 13.6783 11.6667 13.2858 11.6667 12.5Z" stroke="#FFBC02" stroke-width="1.5" />
-        </svg>
-        ,
-        text: 'Cards Issued',
-        count: '3.442',
-        percentage: '32%',
-        trend: <RiArrowUpSFill color='#4EEA7A' size={24} />,
-        textcolor: 'text-[#FFBC02]',
-        percentcolor: '#4EEA7A',
-
-
+        icon: <CardIssue />,
+        header: "Cards Issued ",
+        price: "3.442 ",
+        dropIcon: <RiArrowUpSFill color="#4EEA7A" size="24" />,
+        percentage: "32%",
+        color: "#FFBC02",
+        dropcolor: "#4EEA7A",
     },
-]
-const CardNews = () => {
+];
+export const CardsNews = () => {
     return (
-        <div className='overflow-x-auto '>
-            <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 overflow-x-auto   gap-6 justify-between'>
-                {news.map(({ id, icon, text, trend, textcolor, count, percentage, percentcolor }) => (
-                    <div
+        <main className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)] overflow-x-auto no-scrollbar">
+            {cardList.map(
+                ({
+                    icon,
+                    header,
+                    dropIcon,
+                    percentage,
+                    price,
+                    dropcolor,
+                    id,
+                    color,
+                }) => (
+                    <section
                         key={id}
-                        className='bg-white dark:bg-[#191929] rounded-xl py-5 px-5 flex flex-col gap-[14px] items-start w-auto'
+                        className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-[#191929] rounded-lg  w-full min-w-[232px] "
                     >
-                        <div className={`gap-2 flex items-center ${textcolor}`}>
+                        <article className=" flex gap-2 items-center">
                             {icon}
-                            <p className={`${textcolor} whitespace-nowrap `}>{text}</p>
-                        </div>
-                        <div className='flex gap-[6px] items-center'>
-                            <h3 className='text-dark-grey dark:text-white text-[clamp(16px,0.8vw,28px)] whitespace-nowrap font-semibold leading-9 tracking-[-1.12px]'>
-                                {count}
+                            <h4
+                                style={{
+                                    color: color,
+                                }}
+                                className="text-[clamp(10px,1vw,16px)] font-medium"
+                            >
+                                {header}
+                            </h4>
+                        </article>
+                        <div className=" flex gap-[6px] items-center">
+                            <h3 className="text-[#121212] dark:text-white font-semibold text-[clamp(12px,1.9vw,28px)] whitespace-nowrap">
+                                {price}
                             </h3>
-                            <div className={`flex gap-[2px] items-center text-[${percentcolor}]`}>
-                                {trend}
-                                <p className={`text-base leading-6 tracking-[-0.48px]`}>{percentage}</p>
-                            </div>
+                            <article
+                                className="flex gap-[2px] items-center"
+                                style={{
+                                    color: dropcolor,
+                                }}
+                            >
+                                {dropIcon}
+                                <p className=" text-[clamp(13px,1vw,16px)]  font-normal">
+                                    {percentage}
+                                </p>
+                            </article>
                         </div>
-                    </div>
-                ))}
-            </section>
-        </div>
-    )
-}
-
-export default CardNews
+                    </section>
+                )
+            )}
+        </main>
+    );
+};

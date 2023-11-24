@@ -1,7 +1,8 @@
+import React from "react";
+
 import { clsx } from "@mantine/core";
 import { Moon, Sun1 } from "iconsax-react";
 import { useTheme } from "next-themes";
-import React from "react";
 
 export const ThemeSwitch = () => {
     const { resolvedTheme, setTheme } = useTheme();
@@ -19,6 +20,7 @@ export const ThemeSwitch = () => {
                     size="24"
                     color={resolvedTheme === "light" ? "#2d6ded" : "white"}
                     variant="Bold"
+
                 />
 
             </section>

@@ -48,3 +48,9 @@ td {
 body::-webkit-scrollbar {
   display: none !important;
 }
+
+@media (prefers-color-scheme: dark) {
+  th {
+    color: white !important;
+  }
+}

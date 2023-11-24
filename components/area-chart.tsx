@@ -47,7 +47,7 @@ export const data = {
         {
             fill: 'origin', // Fills the area below the line
             label: 'Green Line',
-            data: labels.map(() => faker.datatype.number({ min: 80, max: 140 })),
+            data: labels.map(() => faker.number.int({ min: 80, max: 140 })),
             borderColor: 'rgb(53, 162, 205)',
             backgroundColor: 'rgba(53, 162, 235, 0.5)',
             tension: 0.4,

@@ -21,12 +21,12 @@ export function DataTable() {
     ));
 
     return (
-        <div className='flex flex-col gap-7 bg-white rounded-xl px-12 py-7 overflow-auto no-scrollbar'>
+        <div className='flex flex-col gap-7 bg-white dark:bg-[#191929] rounded-xl px-12 py-7 overflow-auto no-scrollbar'>
             <div className='flex gap-5 flex-col'>
                 <div className=' flex justify-between items-center'>
                     <span className='flex items-center gap-2'>
                         <FaDatabase />
-                        <p className='text-dark-grey font-medium tracking-[-0.48px] leading-6 text-base'>Total Points</p>
+                        <p className='text-dark-grey dark:text-white font-medium tracking-[-0.48px] leading-6 text-base'>Total Points</p>
                     </span>
                     <p className='text-[#876AFE] text-xs font-medium leading-4 tracking-[0.24px] cursor-pointer'>
                         View All

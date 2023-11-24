@@ -1,12 +1,11 @@
-import React from "react";
 import Logo from "./icons/logo";
+import { ThemeSwitch } from "@/styles/switcher";
+
 import { FaRegUser } from "react-icons/fa";
 import { PiBriefcaseLight } from "react-icons/pi";
 import { SlLock } from "react-icons/sl";
 import { LuLayoutGrid } from "react-icons/lu";
-import { Switch, useMantineTheme } from "@mantine/core";
-import { Moon, Sun1 } from "iconsax-react";
-import { ThemeSwitch } from "@/styles/switcher";
+import { useMantineTheme } from "@mantine/core";
 
 const asideData = [
   {

@@ -40,17 +40,17 @@ const Header = () => {
                 placeholder="Search Property..."
             />
             <div className='gap-8 items-center flex '>
-                <InternationalizationSwitch />
                 <div className='gap-6 items-center flex '>
-                    <Message size={24} color='currentColor' />
-                    <RiSettingsLine size={24} color='currentColor' />
-                    <Notification size={24} color='currentColor' />
+                    <InternationalizationSwitch />
+                    <Message size={24} color='currentColor' className='max-[920px]:hidden' />
+                    <RiSettingsLine size={24} color='currentColor' className='max-[920px]:hidden' />
+                    <Notification size={24} color='currentColor' className='max-[920px]:hidden' />
                 </div>
                 <div className='flex items-center gap-[14px]'>
                     <Avatar size={34} radius='100%' src='/user.svg' />
-                    <p className='text-dark-grey tracking-[-0.32px]'>Alex Smith</p>
+                    <p className='text-dark-grey dark:text-white tracking-[-0.32px]'>Alex Smith</p>
                 </div>
-                <AsideDrawer opened={opened} close={close} open={open} />
+                <HambergerMenu size="32" color="currentColor" className='hidden max-[920px]:flex cursor-pointer' />
             </div>
         </header>
 
