@@ -65,7 +65,7 @@ export const data = {
 
 export function AreaChart() {
     return (
-        <div className='flex'>
+        <div className='flex overflow-auto'>
             <Line options={options} data={data} />
         </div>
     );

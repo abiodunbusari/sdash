@@ -23,7 +23,7 @@ export const InternationalizationSwitch = () => {
             <Popover.Target>
                 <Text className="text-sm flex items-center gap-2 cursor-pointer" onClick={toggle}>
                     Select Language
-                    <ArrowDown2 size={18} />
+                    <ArrowDown2 size={18} className="cursor-pointer" />
                 </Text>
             </Popover.Target>
             <Popover.Dropdown
