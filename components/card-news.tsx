@@ -41,8 +41,8 @@ const cardList = [
 ];
 export const CardsNews = () => {
     return (
-        <main className="overflow-auto">
-            <article className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)]  no-scrollbar">
+        <main className="overflow-auto no-scrollbar ">
+            <article className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)]  ">
                 {cardList.map(
                     ({
                         icon,
