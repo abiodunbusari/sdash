@@ -29,3 +29,24 @@ export interface ChargedBy {
     company: string;
     logo:    string;
 }
+
+
+export interface IForecast {
+    message:       string;
+    current_page:  number;
+    page_size:     number;
+    next_page_url: null;
+    prev_page_url: null;
+    count:         number;
+    data:          ForecastDatum[];
+}
+
+export interface ForecastDatum {
+    actual_value:     number;
+    forecasted_value: number;
+    name:             string;
+    q1_variance:      number;
+    q2_variance:      number;
+    q3_variance:      number;
+    q4_variance:      number;
+}

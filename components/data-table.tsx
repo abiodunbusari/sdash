@@ -1,4 +1,7 @@
+import { builder } from '@/api/builder';
+import { tr } from '@faker-js/faker';
 import { Table } from '@mantine/core';
+import { useQuery } from '@tanstack/react-query';
 import { FaDatabase } from 'react-icons/fa';
 const elements = [
     { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },
@@ -8,17 +11,14 @@ const elements = [
     { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
 ];
 export function DataTable() {
-    const rows = elements.map((element) => (
-        <tr key={element.name}>
-            <td>{element.position}</td>
-            <td>{element.name}</td>
-            <td>{element.symbol}</td>
-            <td>{element.mass}</td>
-            <td>{element.mass}</td>
-            <td>{element.mass}</td>
-            <td>{element.mass}</td>
-        </tr>
-    ));
+
+    const { data: forecast } = useQuery({
+        queryFn: () => builder.use().supplies.forecast.fetch(),
+        queryKey: builder.supplies.forecast.fetch.get(),
+        select: (data) => data?.data?.data
+
+    })
+    console.log(forecast)
 
     return (
         <div className='flex flex-col gap-7 bg-white dark:bg-[#191929] rounded-xl px-12 py-7 overflow-auto no-scrollbar'>
@@ -47,7 +47,19 @@ export function DataTable() {
                             <th>Variance</th>
                         </tr>
                     </thead>
-                    <tbody>{rows}</tbody>
+                    <tbody>
+                        {forecast?.map((supply) => (
+                            <tr>
+                                <td className='whitespace-nowrap'>{supply?.name}</td>
+                                <td>{supply?.actual_value}</td>
+                                <td>{supply?.forecasted_value}</td>
+                                <td>{supply?.q1_variance}</td>
+                                <td>{supply?.q2_variance}</td>
+                                <td>{supply?.q3_variance}</td>
+                                <td>{supply?.q4_variance}</td>
+                            </tr>
+                        ))}
+                    </tbody>
                 </Table>
 
             </div>

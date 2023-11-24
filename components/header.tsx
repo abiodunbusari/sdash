@@ -27,7 +27,7 @@ const Header = () => {
                         border: `none`,
                         background: "white",
                         borderRadius: rem(8),
-                        paddingBlock: rem(15),
+                        paddingBlock: rem(11),
                         "&::placeholder": {
                             color: "#ccc",
                             fontWeight: 400,
