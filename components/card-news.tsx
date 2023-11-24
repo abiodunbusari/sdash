@@ -41,52 +41,54 @@ const cardList = [
 ];
 export const CardsNews = () => {
     return (
-        <main className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)] overflow-x-auto no-scrollbar">
-            {cardList.map(
-                ({
-                    icon,
-                    header,
-                    dropIcon,
-                    percentage,
-                    price,
-                    dropcolor,
-                    id,
-                    color,
-                }) => (
-                    <section
-                        key={id}
-                        className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-[#191929] rounded-lg  w-full min-w-[232px] "
-                    >
-                        <article className=" flex gap-2 items-center">
-                            {icon}
-                            <h4
-                                style={{
-                                    color: color,
-                                }}
-                                className="text-[clamp(10px,1vw,16px)] font-medium"
-                            >
-                                {header}
-                            </h4>
-                        </article>
-                        <div className=" flex gap-[6px] items-center">
-                            <h3 className="text-[#121212] dark:text-white font-semibold text-[clamp(12px,1.9vw,28px)] whitespace-nowrap">
-                                {price}
-                            </h3>
-                            <article
-                                className="flex gap-[2px] items-center"
-                                style={{
-                                    color: dropcolor,
-                                }}
-                            >
-                                {dropIcon}
-                                <p className=" text-[clamp(13px,1vw,16px)]  font-normal">
-                                    {percentage}
-                                </p>
+        <main className="overflow-auto">
+            <article className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)]  no-scrollbar">
+                {cardList.map(
+                    ({
+                        icon,
+                        header,
+                        dropIcon,
+                        percentage,
+                        price,
+                        dropcolor,
+                        id,
+                        color,
+                    }) => (
+                        <section
+                            key={id}
+                            className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-[#191929] rounded-lg  "
+                        >
+                            <article className=" flex gap-2 items-center">
+                                {icon}
+                                <h4
+                                    style={{
+                                        color: color,
+                                    }}
+                                    className="text-[clamp(10px,1vw,16px)] font-medium"
+                                >
+                                    {header}
+                                </h4>
                             </article>
-                        </div>
-                    </section>
-                )
-            )}
+                            <div className=" flex gap-[6px] items-center">
+                                <h3 className="text-[#121212] dark:text-white font-semibold text-[clamp(12px,1.9vw,28px)] whitespace-nowrap">
+                                    {price}
+                                </h3>
+                                <article
+                                    className="flex gap-[2px] items-center"
+                                    style={{
+                                        color: dropcolor,
+                                    }}
+                                >
+                                    {dropIcon}
+                                    <p className=" text-[clamp(13px,1vw,16px)]  font-normal">
+                                        {percentage}
+                                    </p>
+                                </article>
+                            </div>
+                        </section>
+                    )
+                )}
+            </article>
         </main>
     );
 };
