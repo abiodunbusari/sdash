@@ -11,6 +11,10 @@
 
 }
 
+bod {
+  overflow: auto;
+}
+
 th {
   color: #121212 !important;
   font-family: Poppins;
@@ -29,4 +33,18 @@ td {
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.42px;
+  padding-block: 16px;
+}
+
+.mantine-y08onz>thead>tr>th {
+  border-bottom: 1px solid #121212 !important;
+}
+
+.mantine-y08onz>tbody>tr>td {
+  border-bottom: 1px solid #E3E3E3 !important;
+}
+
+.no-scrollbar::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important;
 }

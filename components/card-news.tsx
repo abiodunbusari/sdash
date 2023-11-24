@@ -10,6 +10,7 @@ const news = [
         text: 'Active Users',
         count: '14,7 M',
         percentage: '32%',
+        percentcolor: '#4EEA7A',
         trend: <RiArrowUpSFill color='#4EEA7A' size={24} />,
         textcolor: 'text-[#2F70F2]',
 
@@ -27,6 +28,7 @@ const news = [
         percentage: '32%',
         trend: <RiArrowDownSFill />,
         textcolor: 'text-[#876AFE]',
+        percentcolor: '#D62C2C'
 
     },
     {
@@ -42,33 +44,37 @@ const news = [
         percentage: '32%',
         trend: <RiArrowUpSFill color='#4EEA7A' size={24} />,
         textcolor: 'text-[#FFBC02]',
+        percentcolor: '#4EEA7A',
+
 
     },
 ]
 const CardNews = () => {
     return (
-        <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6 overflow-x-auto'>
-            {news.map(({ id, icon, text, trend, textcolor, count, percentage }) => (
-                <div
-                    key={id}
-                    className='bg-white rounded-xl py-5 px-5 flex flex-col gap-[14px] items-start  min-w-[200px] w-auto'
-                >
-                    <div className={`gap-2 flex items-center ${textcolor}`}>
-                        {icon}
-                        <p className={`${textcolor} whitespace-nowrap`}>{text}</p>
-                    </div>
-                    <div className='flex gap-[6px] items-center'>
-                        <h3 className='text-dark-grey text-[clamp(16px,0.8vw,28px)] whitespace-nowrap font-semibold leading-9 tracking-[-1.12px]'>
-                            {count}
-                        </h3>
-                        <div className='flex gap-[2px] items-center'>
-                            {trend}
-                            <p className='text-base leading-6 tracking-[-0.48px]'>{percentage}</p>
+        <div className='overflow-x-auto '>
+            <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 overflow-x-auto   gap-6 justify-between'>
+                {news.map(({ id, icon, text, trend, textcolor, count, percentage, percentcolor }) => (
+                    <div
+                        key={id}
+                        className='bg-white dark:bg-[#191929] rounded-xl py-5 px-5 flex flex-col gap-[14px] items-start w-auto'
+                    >
+                        <div className={`gap-2 flex items-center ${textcolor}`}>
+                            {icon}
+                            <p className={`${textcolor} whitespace-nowrap `}>{text}</p>
+                        </div>
+                        <div className='flex gap-[6px] items-center'>
+                            <h3 className='text-dark-grey dark:text-white text-[clamp(16px,0.8vw,28px)] whitespace-nowrap font-semibold leading-9 tracking-[-1.12px]'>
+                                {count}
+                            </h3>
+                            <div className={`flex gap-[2px] items-center text-[${percentcolor}]`}>
+                                {trend}
+                                <p className={`text-base leading-6 tracking-[-0.48px]`}>{percentage}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
-        </section>
+                ))}
+            </section>
+        </div>
     )
 }
 

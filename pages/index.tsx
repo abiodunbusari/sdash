@@ -4,9 +4,10 @@ import MainSection from "@/components/main-section";
 
 export default function Home() {
   return (
-    <main className="grid grid-cols-[clamp(180px,7vw,220px)_1fr] h-screen">
+    <main className="grid grid-cols-[220px_1fr] h-screen overflow-auto no-scrollbar">
       <AsideBar />
-      <section className="flex flex-col">
+
+      <section className="flex flex-col overflow-auto">
         <Header />
         <MainSection />
       </section>

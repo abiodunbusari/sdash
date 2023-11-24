@@ -32,10 +32,10 @@ const QuickTransfer = () => {
                 </div>
                 <div className='w-full bg-platinum h-[1px]' />
             </div>
-            <div className='flex overflow-x-auto gap-[14px] '>
+            <div className='flex overflow-x-auto no-scrollbar gap-[14px] '>
                 {
                     data.map(({ p, text, card, id }) => (
-                        <div className='flex border border-[#DFDFDF] rounded-[6px] p-3 gap-3 items-center '>
+                        <div key={id} className='flex border border-[#DFDFDF] rounded-[6px] p-3 gap-3 items-center '>
                             <Avatar size={20} />
                             <div className='flex flex-col'>
                                 <p className='text-dark-grey text-xs leading-[14px] tracking-[-0.36px] whitespace-nowrap'>{text}</p>

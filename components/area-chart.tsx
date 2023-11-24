@@ -15,7 +15,7 @@ ChartJS.register(
 );
 
 export const options = {
-    responsive: true,
+    responsiveness: true,
     plugins: {
         legend: {
             display: false
@@ -65,7 +65,7 @@ export const data = {
 
 export function AreaChart() {
     return (
-        <div className='flex overflow-auto'>
+        <div className='w-full'>
             <Line options={options} data={data} />
         </div>
     );

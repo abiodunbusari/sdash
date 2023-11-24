@@ -6,6 +6,7 @@ import { SlLock } from "react-icons/sl";
 import { LuLayoutGrid } from "react-icons/lu";
 import { Switch, useMantineTheme } from "@mantine/core";
 import { Moon, Sun1 } from "iconsax-react";
+import { ThemeSwitch } from "@/styles/switcher";
 
 const asideData = [
   {
@@ -68,37 +69,29 @@ const asideData = [
 const AsideBar = () => {
   const theme = useMantineTheme();
   return (
-    <aside className="flex flex-col gap-[54.78px] px-8 border-r-[3px] border-r-[#E3E3E3] pt-[30.25px]">
+    <aside className="flex flex-col dark:bg-[#191929] gap-[54.78px] px-8 border-r-[3px] border-r-[#E3E3E3] dark:border-r-[#9595b7] pt-[30.25px]">
       <section className="flex flex-col gap-[54.78px]">
         <div className="flex items-center gap-3 ">
           <Logo />
-          <Switch
-            classNames={{ track: 'cursor-pointer' }}
-            py={4}
-            color={theme.colorScheme === 'dark' ? '#2F70F2' : '#2F70F2'}
-            onLabel={<Sun1
-              size="16"
-              color="white"
-            />}
-            offLabel={<Moon
-              size="16"
-              color="white"
-            />}
-          />
+          <ThemeSwitch />
         </div>
 
         <section className="flex flex-col gap-[clamp(33px,5vw,72px)] ">
           {
             asideData.map(({ name, id, children }) => (
               <div className="gap-[18px] flex flex-col" key={id}>
-                <p className=" text-eerie-black text-base font-medium tracking-[-0.32px]">{name}</p>
+                <p className=" text-eerie-black dark:text-white  text-base font-medium tracking-[-0.32px] whitespace-nowrap">{name}</p>
                 <div className="w-full h-[1px] bg-platinum"></div>
-                <ul className="flex flex-col gap-7">
+                <ul className="flex flex-col gap-7 justify-center items-start">
                   {
                     children.map(({ name, icon, id }) => (
-                      <li key={id} className="flex items-center gap-2 cursor-pointer hover:text-[#2F70F2] whitespace-nowrap text-sm text-dark-grey">
-                        {icon}
-                        {name}
+                      <li key={id} className="flex items-center gap-2 cursor-pointer dark:text-white hover:text-[#2F70F2] whitespace-nowrap text-sm text-dark-grey">
+                        <>
+                          {icon}
+                        </>
+                        <>
+                          {name}
+                        </>
                       </li>
                     ))
                   }
@@ -107,6 +100,7 @@ const AsideBar = () => {
             ))
           }
         </section>
+
       </section>
     </aside>
   );

@@ -21,7 +21,7 @@ export function DataTable() {
     ));
 
     return (
-        <div className='flex flex-col gap-7 bg-white rounded-xl px-12 py-7 overflow-auto'>
+        <div className='flex flex-col gap-7 bg-white rounded-xl px-12 py-7 overflow-auto no-scrollbar'>
             <div className='flex gap-5 flex-col'>
                 <div className=' flex justify-between items-center'>
                     <span className='flex items-center gap-2'>
@@ -34,8 +34,8 @@ export function DataTable() {
                 </div>
                 <div className='w-full h-[1px] bg-[#E3E3E3]'></div>
             </div>
-            <div className='overflow-auto'>
-                <Table highlightOnHover>
+            <div className='overflow-auto no-scrollbar flex flex-1'>
+                <Table highlightOnHover className='flex-1'>
                     <thead>
                         <tr>
                             <th>Actual</th>

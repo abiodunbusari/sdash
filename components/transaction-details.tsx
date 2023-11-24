@@ -1,6 +1,8 @@
 import React from 'react'
 
 import { Avatar } from '@mantine/core'
+import { useQuery } from '@tanstack/react-query'
+import { builder } from '@/api/builder'
 
 const data = [
     {
@@ -26,6 +28,14 @@ const data = [
     },
 ]
 const TransactionDetails = () => {
+
+    const { data: transactionDetails } = useQuery({
+        queryFn: () => builder.use().transaction.latest.fetch(),
+        queryKey: builder.transaction.latest.fetch.get(),
+        select: (data) => data
+    })
+
+    console.log(transactionDetails)
     return (
         <section className='p-5 rounded-xl bg-white flex flex-col gap-[18px]'>
             <div className='flex flex-col gap-4'>

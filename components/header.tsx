@@ -10,7 +10,7 @@ const Header = () => {
     const [opened, { open, close }] = useDisclosure(false);
 
     return (
-        <header className="bg-[#F7F7FF] py-[15px] px-[32px] flex justify-between items-center">
+        <header className="bg-[#F7F7FF] dark:bg-[#191929] py-[15px] px-[32px] flex justify-between items-center">
             <TextInput
                 w="25%"
                 styles={{
@@ -42,9 +42,9 @@ const Header = () => {
             <div className='gap-8 items-center flex '>
                 <InternationalizationSwitch />
                 <div className='gap-6 items-center flex '>
-                    <Message size={24} color='#121212' />
-                    <RiSettingsLine size={24} color='#121212' />
-                    <Notification size={24} color='#121212' />
+                    <Message size={24} color='currentColor' />
+                    <RiSettingsLine size={24} color='currentColor' />
+                    <Notification size={24} color='currentColor' />
                 </div>
                 <div className='flex items-center gap-[14px]'>
                     <Avatar size={34} radius='100%' src='/user.svg' />
