@@ -47,8 +47,8 @@ export function DataTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        {forecast?.map((supply) => (
-                            <tr>
+                        {forecast?.map((supply, idx) => (
+                            <tr key={idx}>
                                 <td className='whitespace-nowrap'>{supply?.name}</td>
                                 <td>{supply?.actual_value}</td>
                                 <td>{supply?.forecasted_value}</td>
