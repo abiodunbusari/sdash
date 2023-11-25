@@ -8,7 +8,7 @@ const MainSection = () => {
     return (
         <section className="flex-1 flex bg-[rgb(246,246,246)] dark:bg-[#353549] overflow-auto no-scrollbar">
             <div className='flex-1 flex flex-col  px-8 gap-8 py-[38px] '>
-                <div className='grid grid-cols-[1fr_40%] gap-9 max-[1220px]:grid-cols-1 '>
+                <div className='grid grid-cols-[1fr_40%] gap-9 max-[1450px]:grid-cols-[1fr_30%] max-[1300px]:grid-cols-1 '>
                     <div className='flex flex-col gap-[38px]'>
                         <CardsNews />
                         {/* <AreaChart /> */}
