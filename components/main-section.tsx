@@ -11,7 +11,7 @@ const MainSection = () => {
                         <CardsNews />
                         <AreaBarChart />
                     </div>
-                    <div className='flex flex-col flex-1 gap-6'>
+                    <div className='flex flex-col flex-1 overflow-auto gap-6'>
                         <TransactionDetails />
                         <QuickTransfer />
                     </div>
