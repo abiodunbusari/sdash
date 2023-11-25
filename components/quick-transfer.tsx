@@ -25,6 +25,20 @@ const data = [
         p: 'Card',
         image: <Visa />
     },
+    {
+        id: 3,
+        card: '',
+        text: '3419 Debit',
+        p: 'Card',
+        image: <Visa />
+    },
+    {
+        id: 3,
+        card: '',
+        text: '3419 Debit',
+        p: 'Card',
+        image: <Visa />
+    },
 ]
 
 const QuickTransfer = () => {

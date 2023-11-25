@@ -75,7 +75,7 @@ const AsideBar = () => {
           <ThemeSwitch />
         </div>
 
-        <section className="flex flex-col gap-[clamp(33px,5vw,72px)] ">
+        <section className="flex flex-col gap-[76px] ">
           {
             asideData.map(({ name, id, children }) => (
               <div className="gap-[18px] flex flex-col" key={id}>

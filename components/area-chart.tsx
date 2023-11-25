@@ -1,41 +1,10 @@
 import { Text } from "@mantine/core";
 import { ArrowDown2 } from "iconsax-react";
-import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import { RiCheckboxBlankFill } from "react-icons/ri";
 import { useQuery } from "@tanstack/react-query";
 import { builder } from "@/api/builder";
-// const areaChartData = [
-//     {
-//         name: "Page A",
-//         uv: 4000,
-//         pv: 2400,
-//         amt: 2400,
-//     },
-//     {
-//         name: "Page B",
-//         uv: 3000,
-//         pv: 1398,
-//         amt: 2210,
-//     },
-//     {
-//         name: "Page C",
-//         uv: 200,
-//         pv: 9800,
-//         amt: 20,
-//     },
-//     {
-//         name: "Page D",
-//         uv: 2780,
-//         pv: 3908,
-//         amt: 2000,
-//     },
-//     {
-//         name: "Page E",
-//         uv: 1890,
-//         pv: 4800,
-//         amt: 2181,
-//     },
-// ];
+
 export function AreaBarChart() {
 
     const { data: graphDetails } = useQuery({
@@ -43,7 +12,6 @@ export function AreaBarChart() {
         queryKey: builder.transactions.payout.fetch.get(),
         select: ({ data }) => data?.data
     })
-    const inputDate = new Date("2023-06-24T00:00:00.000Z");
     const options: Intl.DateTimeFormatOptions = { month: "short", day: "numeric" };
 
 
@@ -52,7 +20,7 @@ export function AreaBarChart() {
         name: new Date(detail?.date).toLocaleDateString("en-US", options),
         uv: detail?.salary_paid,
         pv: detail?.cash_bond_bought,
-        amt: detail?.cash_bond_bought
+        amt: 'ee'
     }))
     return (
         <section className="flex flex-col gap-5">
@@ -70,12 +38,12 @@ export function AreaBarChart() {
                 <div className="flex gap-2 items-center">
                     <Text className="text-[#A8A8A8] text-xs font-normal">From:</Text>
                     <span className="flex gap-2 items-center">
-                        <Text className="text-[#121212] text-sm font-medium">20 June</Text>
+                        <Text className="text-[#121212] dark:text-white text-sm font-medium">20 June</Text>
                         <ArrowDown2 size={14} className="cursor-pointer" />
                     </span>
                     <Text className="text-[#A8A8A8] text-xs font-normal">To:</Text>
                     <span className="flex gap-2 items-center">
-                        <Text className="text-[#121212] text-sm font-medium">20 July</Text>
+                        <Text className="text-[#121212]  dark:text-white  text-sm font-medium">20 July</Text>
                         <ArrowDown2 size={14} className="cursor-pointer" />
                     </span>
                 </div>
@@ -91,7 +59,8 @@ export function AreaBarChart() {
                         </linearGradient>
                     </defs>
                     <XAxis dataKey="name" color="white" label={{ fill: 'pink' }} />
-                    <YAxis />
+                    <YAxis dataKey='uv' />
+                    <CartesianGrid horizontal={true} vertical={false} />
                     <Area
                         type="monotone"
                         dataKey="uv"
@@ -100,6 +69,7 @@ export function AreaBarChart() {
                         strikethroughThickness={20}
                         underlineThickness={40}
                         fill="url(#colorUv)"
+                        strokeWidth={4}
                     />
                     <Area
                         type="monotone"
@@ -107,6 +77,8 @@ export function AreaBarChart() {
                         stroke="#FFBC02"
                         fillOpacity={1}
                         fill="url(#colorPv)"
+                        strokeWidth={4}
+
                     />
                 </AreaChart>
             </ResponsiveContainer>

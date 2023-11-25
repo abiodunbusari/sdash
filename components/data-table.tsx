@@ -1,15 +1,9 @@
-import { builder } from '@/api/builder';
-import { tr } from '@faker-js/faker';
-import { Table } from '@mantine/core';
 import { useQuery } from '@tanstack/react-query';
-import { FaDatabase } from 'react-icons/fa';
-const elements = [
-    { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },
-    { position: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen' },
-    { position: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium' },
-    { position: 56, mass: 137.33, symbol: 'Ba', name: 'Barium' },
-    { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
-];
+import { Table } from '@mantine/core';
+
+import { builder } from '@/api/builder';
+import { Log } from './icons';
+
 export function DataTable() {
 
     const { data: forecast } = useQuery({
@@ -24,7 +18,7 @@ export function DataTable() {
             <div className='flex gap-5 flex-col'>
                 <div className=' flex justify-between items-center'>
                     <span className='flex items-center gap-2'>
-                        <FaDatabase />
+                        <Log />
                         <p className='text-dark-grey dark:text-white font-medium tracking-[-0.48px] leading-6 text-base'>Total Points</p>
                     </span>
                     <p className='text-[#876AFE] text-xs font-medium leading-4 tracking-[0.24px] cursor-pointer'>

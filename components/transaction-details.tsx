@@ -55,7 +55,7 @@ const TransactionDetails = () => {
             </div>
             <div className='flex flex-col gap-5'>
                 {transactionDetails?.map((item, idx) => (
-                    <div key={idx} className='justify-between item-center flex'>
+                    <div key={idx} className='justify-between items-center flex'>
                         <div className='flex gap-3 items-center'>
                             <Avatar src={`${item?.charged_by?.logo}`} />
                             <div className='flex flex-col'>
