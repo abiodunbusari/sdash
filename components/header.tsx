@@ -27,7 +27,6 @@ const Header = () => {
                         border: `none`,
                         background: "white",
                         borderRadius: rem(8),
-                        paddingBlock: rem(11),
                         "&::placeholder": {
                             color: "#ccc",
                             fontWeight: 400,
@@ -38,6 +37,7 @@ const Header = () => {
                 }}
                 icon={<SearchNormal size={22} />}
                 placeholder="Search Property..."
+                classNames={{ input: 'py-[11px]' }}
             />
             <div className='gap-8 items-center flex '>
                 <div className='gap-6 items-center flex '>

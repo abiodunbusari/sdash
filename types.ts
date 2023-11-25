@@ -50,3 +50,19 @@ export interface ForecastDatum {
     q3_variance:      number;
     q4_variance:      number;
 }
+
+export interface IOverview {
+    message:       string;
+    current_page:  number;
+    page_size:     number;
+    next_page_url: null;
+    prev_page_url: null;
+    count:         number;
+    data:          OverviewDatum[];
+}
+
+export interface OverviewDatum {
+    name:       string;
+    current:    number;
+    last_month: number;
+}

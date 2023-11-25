@@ -18,7 +18,6 @@ export function DataTable() {
         select: (data) => data?.data?.data
 
     })
-    console.log(forecast)
 
     return (
         <div className='flex flex-col gap-7 bg-white dark:bg-[#191929] rounded-xl px-12 py-7 overflow-auto no-scrollbar'>

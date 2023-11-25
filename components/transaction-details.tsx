@@ -29,15 +29,20 @@ const data = [
         price: '-$12.7'
     },
 ]
+
 const TransactionDetails = () => {
 
     const { data: transactionDetails } = useQuery({
-        queryFn: () => builder.use().transaction.latest.fetch(),
-        queryKey: builder.transaction.latest.fetch.get(),
+        queryFn: () => builder.use().transactions.latest.fetch(),
+        queryKey: builder.transactions.latest.fetch.get(),
         select: (data) => data?.data?.data
     })
 
-    console.log(transactionDetails?.[0]?.charged_by?.logo)
+    function formatTimestamp(timestamp: string | number | Date) {
+        const options: Intl.DateTimeFormatOptions = { month: 'long', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'UTC' }; const date = new Date(timestamp);
+        return date.toLocaleString('en-US', options);
+    }
+
     return (
         <section className='p-5 rounded-xl bg-white dark:bg-[#191929] flex flex-col gap-[18px]'>
             <div className='flex flex-col gap-4'>
@@ -55,7 +60,7 @@ const TransactionDetails = () => {
                             <Avatar src={`${item?.charged_by?.logo}`} />
                             <div className='flex flex-col'>
                                 <h6 className='text-dark-grey dark:text-white text-xs font-medium leading-[20px] tracking-[-0.36px]'>{item?.charged_by?.company}</h6>
-                                <p className='text-silver text-[9px] leading-4'>{item?.created_at.toString().substring(0, 10)}</p>
+                                <p className='text-silver text-[9px] leading-4'>{formatTimestamp(item?.created_at)}</p>
                             </div>
                         </div>
                         <p className={clsx('text-[10px] font-medium leading-4 tracking-[0.2px]', item?.charge?.type === 'credit' ? 'text-[#4EEA7A]' : 'text-[#D62C2C] ')}>{
