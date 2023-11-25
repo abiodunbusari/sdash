@@ -1,6 +1,7 @@
-import { Avatar } from '@mantine/core'
 import React from 'react'
 import Wallet from './icons/wallet'
+import Visa from './icons/visa'
+import MasterCard from './icons/master-card'
 
 const data = [
     {
@@ -8,21 +9,21 @@ const data = [
         card: '',
         text: '3419 Debit',
         p: 'Card',
-        image: '/visa.svg'
+        image: <Visa />
     },
     {
         id: 2,
         card: '',
         text: '3419 Debit',
         p: 'Card',
-        image: '/mastercard.svg'
+        image: <MasterCard />
     },
     {
         id: 3,
         card: '',
         text: '3419 Debit',
         p: 'Card',
-        image: '/visa.svg'
+        image: <Visa />
     },
 ]
 
@@ -38,11 +39,9 @@ const QuickTransfer = () => {
             </div>
             <div className='flex overflow-x-auto no-scrollbar gap-[14px] '>
                 {
-                    data.map(({ p, text, card, id, image }) => (
+                    data.map(({ p, text, id, image }) => (
                         <div key={id} className='flex border border-[#DFDFDF] rounded-[6px] p-3 gap-3 items-center '>
-                            <div>
-                                <Avatar size='100%' src={`${image}`} />
-                            </div>
+                            {image}
                             <div className='flex flex-col'>
                                 <p className='text-dark-grey dark:text-white text-xs leading-[14px] tracking-[-0.36px] whitespace-nowrap'>{text}</p>
                                 <p className='text-dark-grey dark:text-white text-xs leading-[14px] tracking-[-0.36px]'>{p}</p>

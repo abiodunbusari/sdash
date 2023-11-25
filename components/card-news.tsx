@@ -62,14 +62,14 @@ export const CardsNews = () => {
                             key={idx}
                             className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-[#191929] rounded-lg  "
                         >
-                            <article className=" flex gap-2 items-center">
+                            <div className=" flex gap-2 items-center">
                                 {idx === 0 ? <Profile2User color="#2F70F2" size={20} /> : idx === 1 ? <CardTransfer /> : <CardIssue />}
                                 <h4
-                                    className={clsx('text-[clamp(10px,1vw,16px)] font-medium', idx === 0 ? '#2F70F2' : idx === 1 ? '#876AFE' : '#FFBC02')}
+                                    className={clsx('text-[clamp(10px,1vw,16px)] font-medium', idx === 0 ? 'text-[#2F70F2]' : idx === 1 ? 'text-[#876AFE]' : 'text-[#FFBC02]')}
                                 >
                                     {(item?.name.charAt(0).toUpperCase() + item?.name.slice(1)).split('_').join(' ')}
                                 </h4>
-                            </article>
+                            </div>
                             <div className=" flex gap-[6px] items-center">
                                 <h3 className="text-[#121212] dark:text-white font-semibold text-[clamp(12px,1.9vw,28px)] whitespace-nowrap">
                                     {item?.current - item?.last_month}

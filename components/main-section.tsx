@@ -1,8 +1,6 @@
-import React from 'react'
-// import CardNews from './card-news'
 import TransactionDetails from './transaction-details'
 import QuickTransfer from './quick-transfer'
-import { ActivityChart, AreaChart, CardsNews, DataTable } from '.'
+import { ActivityChart, AreaBarChart, CardsNews, DataTable } from '.'
 
 const MainSection = () => {
     return (
@@ -11,7 +9,7 @@ const MainSection = () => {
                 <div className='grid grid-cols-[1fr_40%] gap-9 max-[1450px]:grid-cols-[1fr_30%] max-[1300px]:grid-cols-1 '>
                     <div className='flex flex-col gap-[38px]'>
                         <CardsNews />
-                        {/* <AreaChart /> */}
+                        <AreaBarChart />
                     </div>
                     <div className='flex flex-col flex-1 gap-6'>
                         <TransactionDetails />

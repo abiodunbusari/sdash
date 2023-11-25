@@ -66,3 +66,20 @@ export interface OverviewDatum {
     current:    number;
     last_month: number;
 }
+
+export interface IPayoutLog {
+    message:       string;
+    current_page:  number;
+    page_size:     number;
+    next_page_url: null;
+    prev_page_url: null;
+    count:         number;
+    data:          PayoutDatum[];
+}
+
+export interface PayoutDatum {
+    date:             Date;
+    salary_paid:      number;
+    cash_bond_bought: number;
+}
+
