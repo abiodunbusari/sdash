@@ -55,7 +55,7 @@ const TransactionDetails = () => {
                 {transactionDetails?.map((item, idx) => (
                     <li key={idx} className='justify-between items-center flex'>
                         <div className='flex gap-3 items-center'>
-                            <Avatar src={item?.charged_by?.logo} component='image' alt={item?.charged_by?.company} />
+                            <Avatar src={'/api/svg?url=' + item?.charged_by?.logo} alt={item?.charged_by?.company} size={24} component='image' />
                             <div className='flex flex-col'>
                                 <h6 className='text-dark-grey dark:text-white text-xs font-medium leading-[20px] tracking-[-0.36px]'>{item?.charged_by?.company}</h6>
                                 <p className='text-silver text-[9px] leading-4'>{formatTimestamp(item?.created_at)}</p>

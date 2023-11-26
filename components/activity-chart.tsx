@@ -30,7 +30,7 @@ export const ActivityChart = () => {
                 </section>
 
                 <Accordion defaultValue="customization" onChange={handleAccordionChange}
-                    value={expandedItem} classNames={{ label: 'text-[#A8A8A8]', item: 'border-none', chevron: 'text-[#121212] w-6 h-6 font-bold' }}>
+                    value={expandedItem} classNames={{ label: 'text-[#A8A8A8] dark:text-white', item: 'border-none', chevron: 'text-[#121212] w-6 h-6 font-bold' }}>
                     <Accordion.Item value="customization">
                         <Accordion.Control>
                             <span aria-hidden="true" className="visually-hidden">
@@ -40,7 +40,7 @@ export const ActivityChart = () => {
                     </Accordion.Item>
                 </Accordion>
                 <Accordion defaultValue="customization" onChange={handleAccordionChange}
-                    value={expandedItem} classNames={{ label: 'text-[#A8A8A8]', item: 'border-none', chevron: 'text-[#121212] w-6 h-6 font-bold' }}>
+                    value={expandedItem} classNames={{ label: 'text-[#A8A8A8] !dark:text-white', item: 'border-none', chevron: 'text-[#121212] w-6 h-6 font-bold' }}>
                     <Accordion.Item value="customization">
                         <Accordion.Control><span aria-hidden="true" className="visually-hidden">
                             View Per Year

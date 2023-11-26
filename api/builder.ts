@@ -17,5 +17,6 @@ export const builder =createBuilder({
     supplies:{
         forecast:{
             fetch:()=>API.get<IForecast>(`/supplies/forecast`)}
-    }
+    },
+  
 })
