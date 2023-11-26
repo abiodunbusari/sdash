@@ -1,7 +1,7 @@
-import React from "react";
-import { Popover, Text } from "@mantine/core";
+
+import { Button, Popover } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ArrowDown, ArrowDown2 } from "iconsax-react";
+import { ArrowDown2 } from "iconsax-react";
 
 const data = [
     { id: 1, language: "English" },
@@ -21,26 +21,26 @@ export const InternationalizationSwitch = () => {
             withArrow={false}
         >
             <Popover.Target>
-                <Text className="text-sm flex items-center gap-2 cursor-pointer max-[835px]:hidden" onClick={toggle}>
+                <Button component='button' className="text-sm flex  text-[#121212] items-center gap-2 cursor-pointer max-[835px]:hidden" variant="ghost" onClick={toggle}>
                     Select Language
                     <ArrowDown2 size={18} className="cursor-pointer" />
-                </Text>
+                </Button>
             </Popover.Target>
             <Popover.Dropdown
                 sx={{
                     borderRadius: 8,
                 }}
             >
-                <div className=" flex flex-col gap-1">
+                <ul className=" flex flex-col gap-1">
                     {data.map(({ id, language }) => (
-                        <div
-                            className="flex items-center gap-2 p-2 rounded-lg hover:bg-[#2F70F2]"
+                        <li
+                            className="flex cursor-pointer items-center gap-2 p-2 rounded-lg hover:bg-[#2F70F2]"
                             key={id}
                         >
-                            <Text className="cursor-pointer">{language}</Text>
-                        </div>
+                            {language}
+                        </li>
                     ))}
-                </div>
+                </ul>
             </Popover.Dropdown>
         </Popover>
     );

@@ -20,7 +20,6 @@ export function AreaBarChart() {
         name: new Date(detail?.date).toLocaleDateString("en-US", options),
         uv: detail?.salary_paid,
         pv: detail?.cash_bond_bought,
-        amt: 'ee'
     }))
     return (
         <section className="flex flex-col gap-5">

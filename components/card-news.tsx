@@ -77,10 +77,10 @@ export const CardsNews = () => {
                                 <div
                                     className="flex gap-[2px] items-center"
                                 >
-                                    {idx === 0 || idx === 2 ?
+                                    {(item?.current - item?.last_month).toString().startsWith('-') ?
                                         <RiArrowUpSFill color="#D62C2C" size="24" className=" rotate-180" /> : <RiArrowUpSFill color="#4EEA7A" size="24" />}
-                                    <p className=" text-[clamp(13px,1vw,16px)]  font-normal">
-                                        {(item?.current / (item?.current - item?.last_month) * 100).toFixed()}%
+                                    <p className={clsx(` text-[clamp(13px,1vw,16px)]  font-normal`, (item?.current - item?.last_month).toString().startsWith('-') ? 'text-[#D62C2C]' : 'text-[#4EEA7A]')}>
+                                        {(item?.current / (item?.current + item?.last_month) * 100).toFixed()}%
                                     </p>
                                 </div>
                             </div>

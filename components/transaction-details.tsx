@@ -29,7 +29,6 @@ const data = [
         price: '-$12.7'
     },
 ]
-
 const TransactionDetails = () => {
 
     const { data: transactionDetails } = useQuery({
@@ -37,7 +36,6 @@ const TransactionDetails = () => {
         queryKey: builder.transactions.latest.fetch.get(),
         select: (data) => data?.data?.data
     })
-
     function formatTimestamp(timestamp: string | number | Date) {
         const options: Intl.DateTimeFormatOptions = { month: 'long', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'UTC' }; const date = new Date(timestamp);
         return date.toLocaleString('en-US', options);
@@ -53,11 +51,11 @@ const TransactionDetails = () => {
                 <div className='w-full bg-platinum h-[1px]' />
 
             </div>
-            <div className='flex flex-col gap-5'>
+            <ul className='flex flex-col gap-5'>
                 {transactionDetails?.map((item, idx) => (
-                    <div key={idx} className='justify-between items-center flex'>
+                    <li key={idx} className='justify-between items-center flex'>
                         <div className='flex gap-3 items-center'>
-                            <Avatar src={`${item?.charged_by?.logo}`} />
+                            <Avatar src={item?.charged_by?.logo} component='image' alt={item?.charged_by?.company} />
                             <div className='flex flex-col'>
                                 <h6 className='text-dark-grey dark:text-white text-xs font-medium leading-[20px] tracking-[-0.36px]'>{item?.charged_by?.company}</h6>
                                 <p className='text-silver text-[9px] leading-4'>{formatTimestamp(item?.created_at)}</p>
@@ -65,10 +63,10 @@ const TransactionDetails = () => {
                         </div>
                         <p className={clsx('text-[10px] font-medium leading-4 tracking-[0.2px]', item?.charge?.type === 'credit' ? 'text-[#4EEA7A]' : 'text-[#D62C2C] ')}>{
                             item?.charge?.type === 'credit' ? '+' : '-'}
-                            {item?.charge?.amount}</p>
-                    </div>
+                            {item?.charge?.currency?.sign}{item?.charge?.amount}</p>
+                    </li>
                 ))}
-            </div>
+            </ul>
 
         </section>
     )

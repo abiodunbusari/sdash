@@ -14,17 +14,17 @@ const asideData = [
     children: [
       {
         id: 1,
-        icon: <LuLayoutGrid size={22} />,
+        icon: <LuLayoutGrid size={22} role='representation' />,
         name: "Home",
       },
       {
         id: 2,
-        icon: <FaRegUser size={22} />,
+        icon: <FaRegUser size={22} role='representation' />,
         name: "Files",
       },
       {
         id: 3,
-        icon: <PiBriefcaseLight size={22} />,
+        icon: <PiBriefcaseLight size={22} role='representation' />,
         name: "Decline Project",
       },
       {
@@ -32,14 +32,14 @@ const asideData = [
         icon: <SlLock size={22} />,
         name: "Management",
       },
-      { id: 5, icon: <SlLock size={22} />, name: "Database" },
+      { id: 5, icon: <SlLock size={22} role='representation' />, name: "Database" },
     ],
   },
   {
     id: 2,
     name: 'Customer Data',
     children: [
-      { id: 1, icon: <LuLayoutGrid size={22} />, name: "Team Award" },
+      { id: 1, icon: <LuLayoutGrid size={22} role='representation' />, name: "Team Award" },
       {
         id: 2,
         icon: <FaRegUser size={22} />,
@@ -79,7 +79,7 @@ const AsideBar = () => {
           {
             asideData.map(({ name, id, children }) => (
               <div className="gap-[18px] flex flex-col" key={id}>
-                <p className=" text-eerie-black dark:text-white  text-base font-medium tracking-[-0.32px] whitespace-nowrap">{name}</p>
+                <h2 className=" text-eerie-black dark:text-white  text-base font-medium tracking-[-0.32px] whitespace-nowrap">{name}</h2>
                 <div className="w-full h-[1px] bg-platinum"></div>
                 <ul className="flex flex-col gap-7 justify-center items-start">
                   {
