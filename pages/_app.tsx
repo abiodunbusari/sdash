@@ -14,12 +14,15 @@ const queryClient = new QueryClient({
   },
 });
 
+const messages = {
+  ar,
+  en,
+};
 export default function App({ Component, pageProps }: AppProps) {
-  const { locale } = useRouter()
-  const messages = {
-    ar,
-    en,
-  };
+  const router = useRouter();
+  const { locale } = router;
+  const messagesForLocale = messages[locale as keyof typeof messages];
+
   function getDirection(locale: string) {
     if (locale === "ar") {
       return "rtl";
@@ -27,17 +30,15 @@ export default function App({ Component, pageProps }: AppProps) {
 
     return "ltr";
   }
-  const messagesForLocale = messages[locale as keyof typeof messages];
 
   return <ThemeProvider attribute='class' enableSystem={false} enableColorScheme>
     <QueryClientProvider client={queryClient}>
       <IntlProvider
         locale={String(locale)}
         messages={
-          messagesForLocale as
+          messagesForLocale as unknown as
           | Record<string, string>
           | Record<string, MessageFormatElement[]>
-          | undefined
         }>
         <Component {...pageProps} dir={getDirection(String(locale))} />
       </IntlProvider>

@@ -12,15 +12,14 @@ const AsideBar = () => {
 
   const theme = useMantineTheme();
   const intl = useIntl();
-  const sidebarTitle = intl.messages["page.home.sidebar.title"];
-  const sidebarData = intl.messages["page.home.sidebar.data"];
-  const sidebarBottomLis = intl.messages["page.home.sidebar.lowerpartdata"];
+  const sidebarTitle = intl.messages["page.home.sidebar.title"] as unknown as Record<string, string>;
+  const sidebarBottomList = intl.messages["page.home.sidebar.lowerpartdata"] as unknown as Record<string, string>;
   const sideMenuTitles = intl.messages['page.home.sidebar.data'] as unknown as Record<string, string>
 
   const asideData = [
     {
       id: 1,
-      name: "Dashboard",
+      name: sidebarTitle.dashboard,
       children: [
         {
           id: 1,
@@ -47,29 +46,29 @@ const AsideBar = () => {
     },
     {
       id: 2,
-      name: 'Customer Data',
+      name: sidebarTitle.customer,
       children: [
-        { id: 1, icon: <LuLayoutGrid size={22} role='representation' />, name: "Team Award" },
+        { id: 1, icon: <LuLayoutGrid size={22} role='representation' />, name: sidebarBottomList.team },
         {
           id: 2,
           icon: <FaRegUser size={22} />,
-          name: "Invoice Data",
+          name: sidebarBottomList.invoice,
         },
         {
           id: 3,
           icon: <PiBriefcaseLight size={22} />,
-          name: "Settings",
+          name: sidebarBottomList.settings,
         },
-        { id: 4, icon: <SlLock size={22} />, name: "Announcement" },
+        { id: 4, icon: <SlLock size={22} />, name: sidebarBottomList.announcement },
         {
           id: 5,
           icon: <SlLock size={22} />,
-          name: "Media Assets",
+          name: sidebarBottomList.media,
         },
         {
           id: 6,
           icon: <SlLock size={22} />,
-          name: "Client Feedback",
+          name: sidebarBottomList.client,
         }
       ]
     }

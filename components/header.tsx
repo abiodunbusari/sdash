@@ -1,12 +1,14 @@
 import { InternationalizationSwitch } from '.'
+import { ThemeSwitch } from '@/styles/switcher'
 
 import { HambergerMenu, Message, Notification, SearchNormal } from 'iconsax-react'
 import { RiSettingsLine } from 'react-icons/ri'
 import { Avatar, TextInput, rem } from '@mantine/core'
-import { ThemeSwitch } from '@/styles/switcher'
+import { useIntl } from 'react-intl'
 
 const Header = () => {
-
+    const intl = useIntl();
+    const placeHolder = intl.messages["page.home.sidebar.title"] as unknown as Record<string, string>
     return (
         <header>
             <nav className="bg-[#F7F7FF] dark:bg-[#191929] py-[15px] px-[32px] flex justify-between items-center">

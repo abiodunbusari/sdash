@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Moon, Sun1 } from "iconsax-react";
 import { useTheme } from "next-themes";

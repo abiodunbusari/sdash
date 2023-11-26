@@ -3,7 +3,8 @@
   "page.home.head.meta.description": "Next.js i18n example - English",
   "page.home.title": "Welcome to <b>Next.js i18n tutorial</b>",
   "page.home.description": "You are currently viewing the homepage in English 🚀",
-  "page.home.sidebar.title": ["Dashboard", "Customer Data"],
+  "page.home.sidebar.title": {"dashboard": "Dashboard", "customer":"Customer Data"},
+
  "page.home.sidebar.data":{
   "home": "Home",
   "files": "Files",
@@ -12,16 +13,17 @@
   "database": "Database"
  },
   
-  "page.home.sidebar.lowerpartdata": [
-    "Team Award",
-    "Invoice Data",
-    "Settings",
-    "Announcement",
-    "Media Assets",
-    "Client Feedback"
-  ],
+  "page.home.sidebar.lowerpartdata": {
+    "team" : "Team Award",
+    "invoice": "Invoice Data",
+    "settings": "Settings",
+    "announcement": "Announcement",
+    "media": "Media Assets",
+    "client":"Client Feedback"
+  },
+
   "page.home.header.placeholder": "Search property",
-  "page.home.hero.active-users": ["Active Users", "14.7M", "32%"],
+  "page.home.hero.active-users": {"user":"Active Users", "price":"14.7M", "percent":"32%"},
   "page.home.hero.active-transactions": ["Transactions", "$1.234.10", "32%"],
   "page.home.hero.active.cards.issued": ["Cards Issued", "3.442", "32%"]
 }
