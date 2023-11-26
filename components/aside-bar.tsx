@@ -1,5 +1,4 @@
 import Logo from "./icons/logo";
-import { ThemeSwitch } from "@/styles/switcher";
 
 import { FaRegUser } from "react-icons/fa";
 import { PiBriefcaseLight } from "react-icons/pi";
@@ -15,7 +14,7 @@ const AsideBar = () => {
   const intl = useIntl();
   const sidebarTitle = intl.messages["page.home.sidebar.title"];
   const sidebarData = intl.messages["page.home.sidebar.data"];
-  const sidebarLowerData = intl.messages["page.home.sidebar.lowerpartdata"];
+  const sidebarBottomLis = intl.messages["page.home.sidebar.lowerpartdata"];
   const sideMenuTitles = intl.messages['page.home.sidebar.data'] as unknown as Record<string, string>
 
   const asideData = [
@@ -79,10 +78,7 @@ const AsideBar = () => {
   return (
     <aside className="flex flex-col dark:bg-[#191929] gap-[54.78px] px-8 border-r-[3px] border-r-[#E3E3E3] dark:border-r-[#9595b7] pt-[30.25px]">
       <section className="flex flex-col gap-[54.78px]">
-        <div className="flex items-center gap-3 ">
-          <Logo />
-          <ThemeSwitch />
-        </div>
+        <Logo />
         <section className="flex flex-col gap-[76px] ">
           {
             asideData.map(({ name, id, children }) => (

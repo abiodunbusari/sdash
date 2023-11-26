@@ -3,6 +3,7 @@ import { InternationalizationSwitch } from '.'
 import { HambergerMenu, Message, Notification, SearchNormal } from 'iconsax-react'
 import { RiSettingsLine } from 'react-icons/ri'
 import { Avatar, TextInput, rem } from '@mantine/core'
+import { ThemeSwitch } from '@/styles/switcher'
 
 const Header = () => {
 
@@ -10,7 +11,7 @@ const Header = () => {
         <header>
             <nav className="bg-[#F7F7FF] dark:bg-[#191929] py-[15px] px-[32px] flex justify-between items-center">
                 <TextInput
-                    w="25%"
+                    miw="28%"
                     styles={{
                         label: {
                             color: "#121212",
@@ -37,8 +38,8 @@ const Header = () => {
                     placeholder="Search Property..."
                     classNames={{ input: 'py-[11px]' }}
                 />
-                <section className='gap-8 items-center flex '>
-                    <ul className='gap-6 items-center flex '>
+                <section className='gap-[clamp(20px,2vw,32px)] items-center flex '>
+                    <ul className='gap-[clamp(16px,1vw,24px)] items-center flex '>
                         <li>
                             <InternationalizationSwitch />
                         </li>
@@ -53,10 +54,13 @@ const Header = () => {
                         </li>
                     </ul>
                     <div className='flex items-center gap-[14px]'>
-                        <Avatar size={34} radius='100%' src='/user.svg' component='image' />
-                        <p className='text-dark-grey dark:text-white tracking-[-0.32px]'>Alex Smith</p>
+                        <Avatar size={34} radius='100%' src='/user.svg' role='representation' />
+                        <p className='text-dark-grey dark:text-white tracking-[-0.32px] max-[780px]:hidden'>Alex Smith</p>
                     </div>
-                    <HambergerMenu size="32" color="currentColor" className='hidden max-[920px]:flex cursor-pointer' />
+                    <>
+                        <ThemeSwitch />
+                        <HambergerMenu size="32" color="currentColor" className='hidden max-[920px]:flex cursor-pointer' />
+                    </>
                 </section>
             </nav>
         </header>

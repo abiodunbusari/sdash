@@ -24,8 +24,8 @@ export function AreaBarChart() {
     return (
         <section className="flex flex-col gap-5">
             <section className="flex justify-between">
-                <div className="flex gap-4">
-                    <span className="flex items-center gap-3">
+                <div className="flex gap-4 max-[702px]:flex-col max-[702px]:gap-1">
+                    <span className="flex items-center gap-3 ">
                         <Text className="text-[#121212] dark:text-white">Salary</Text>
                         <RiCheckboxBlankFill size={18} color="#876AFE" />
                     </span>
