@@ -19,7 +19,7 @@ export const InternationalizationSwitch = () => {
                     <Link
                         key={locale}
                         href="/"
-                        locale={locale}
+                        locale={locale == 'ar' ? 'Arabic' : 'English'}
                         className="block"
                         onClick={() => close()}>
                         {locale}
