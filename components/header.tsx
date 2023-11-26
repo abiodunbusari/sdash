@@ -1,14 +1,15 @@
-import { InternationalizationSwitch } from '.'
-import { ThemeSwitch } from '@/styles/switcher'
-
 import { HambergerMenu, Message, Notification, SearchNormal } from 'iconsax-react'
 import { RiSettingsLine } from 'react-icons/ri'
 import { Avatar, TextInput, rem } from '@mantine/core'
 import { useIntl } from 'react-intl'
 
+import { InternationalizationSwitch } from '.'
+import { ThemeSwitch } from '@/styles/switcher'
+
 const Header = () => {
     const intl = useIntl();
-    const placeHolder = intl.messages["page.home.sidebar.title"] as unknown as Record<string, string>
+    const placeHolder = intl.messages["page.home.header.title"] as unknown as Record<string, string>
+    const user = intl.messages["page.home.header.user"] as string
     return (
         <header>
             <nav className="bg-[#F7F7FF] dark:bg-[#191929] py-[15px] px-[32px] flex justify-between items-center">
@@ -37,11 +38,11 @@ const Header = () => {
                         },
                     }}
                     icon={<SearchNormal size={22} />}
-                    placeholder="Search Property..."
+                    placeholder='Select properly...'
                     classNames={{ input: 'py-[11px]' }}
                 />
                 <section className='gap-[clamp(20px,2vw,32px)] items-center flex '>
-                    <ul className='gap-[clamp(16px,1vw,24px)] items-center flex '>
+                    <ul className='gap-[clamp(16px,1vw,24px)] items-center flex cursor-pointer'>
                         <li>
                             <InternationalizationSwitch />
                         </li>
@@ -57,7 +58,7 @@ const Header = () => {
                     </ul>
                     <div className='flex items-center gap-[14px]'>
                         <Avatar size={34} radius='100%' src='/user.svg' role='representation' />
-                        <p className='text-dark-grey dark:text-white tracking-[-0.32px] max-[780px]:hidden'>Alex Smith</p>
+                        <p className='text-dark-grey dark:text-white tracking-[-0.32px] max-[780px]:hidden'>{user}</p>
                     </div>
                     <>
                         <ThemeSwitch />

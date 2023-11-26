@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import { builder } from '@/api/builder'
 import { Transanction } from './icons'
 import clsx from 'clsx'
+import { useIntl } from 'react-intl'
 
 const data = [
     {
@@ -30,7 +31,8 @@ const data = [
     },
 ]
 const TransactionDetails = () => {
-
+    const intl = useIntl();
+    const transaction = intl.messages["page.home.transaction"] as string
     const { data: transactionDetails } = useQuery({
         queryFn: () => builder.use().transactions.latest.fetch(),
         queryKey: builder.transactions.latest.fetch.get(),
@@ -46,7 +48,7 @@ const TransactionDetails = () => {
             <div className='flex flex-col gap-4'>
                 <div className='flex items-center gap-2'>
                     <Transanction />
-                    <h3 className='text-dark-grey dark:text-white text-base font-medium leading-6 tracking-[-0.48px]'>Transaction Details</h3>
+                    <h3 className='text-dark-grey dark:text-white text-base font-medium leading-6 tracking-[-0.48px]'>{transaction}</h3>
                 </div>
                 <div className='w-full bg-platinum h-[1px]' />
 

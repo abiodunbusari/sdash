@@ -21,9 +21,10 @@
     "media": "Media Assets",
     "client":"Client Feedback"
   },
-
+"page.home.header.user":"Alex Smith",
   "page.home.header.placeholder": "Search property",
   "page.home.hero.active-users": {"user":"Active Users", "price":"14.7M", "percent":"32%"},
   "page.home.hero.active-transactions": ["Transactions", "$1.234.10", "32%"],
-  "page.home.hero.active.cards.issued": ["Cards Issued", "3.442", "32%"]
+  "page.home.hero.active.cards.issued": ["Cards Issued", "3.442", "32%"],
+  "page.home.transaction": "Transaction Details"
 }

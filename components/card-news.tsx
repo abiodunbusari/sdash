@@ -23,7 +23,7 @@ export const CardsNews = () => {
                             key={idx}
                             className="p-[clamp(16px,1.3vw,20px)] flex flex-col gap-[clamp(10px,0.9vw,14px)] bg-white dark:bg-[#191929] rounded-lg  "
                         >
-                            <div className=" flex gap-2 items-center">
+                            <div className=" flex gap-2 items-end">
                                 {idx === 0 ? <Profile2User color="#2F70F2" size={20} /> : idx === 1 ? <CardTransfer /> : <CardIssue />}
                                 <h4
                                     className={clsx('text-[clamp(10px,1vw,16px)] font-medium', idx === 0 ? 'text-[#2F70F2]' : idx === 1 ? 'text-[#876AFE]' : 'text-[#FFBC02]')}

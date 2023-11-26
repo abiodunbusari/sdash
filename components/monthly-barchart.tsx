@@ -17,9 +17,8 @@ export const MonthlyBarchart = () => {
             {
                 label: "764",
                 data: [55, 20, 35, 45, 35, 48,],
-                backgroundColor: "#876AFE",
-                // borderWidth: 1,
-                barPercentage: 0.3,
+                backgroundColor: ["#876AFE", "#FFBC02", "#876AFE", "#FFBC02", "#876AFE", "#FFBC02"],
+                barPercentage: 0.6,
                 categoryPercentage: 0.5,
                 borderRadius: 20,
                 width: 12

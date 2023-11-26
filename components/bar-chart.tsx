@@ -6,10 +6,9 @@ import {
     LinearScale,
     Tooltip,
 } from "chart.js";
+import { Bar } from "react-chartjs-2";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
-
-import { Bar } from "react-chartjs-2";
 export const WeeklyBarchart = () => {
     const data = {
         labels: ["", "", "", "", "", ""],
@@ -17,9 +16,8 @@ export const WeeklyBarchart = () => {
             {
                 label: "764",
                 data: [55, 20, 35, 45, 35, 48,],
-                backgroundColor: "#876AFE",
-                // borderWidth: 1,
-                barPercentage: 0.3,
+                backgroundColor: ["#876AFE", "#FFBC02", "#876AFE", "#FFBC02", "#876AFE", "#FFBC02"],
+                barPercentage: 0.6,
                 categoryPercentage: 0.5,
                 borderRadius: 20,
                 width: 12
@@ -30,7 +28,6 @@ export const WeeklyBarchart = () => {
     const options = {
         responsiveness: true,
         plugins: {
-
             title: {
                 display: false
             },
@@ -38,14 +35,12 @@ export const WeeklyBarchart = () => {
                 display: false
             },
         },
-
         scales: {
             x: {
                 grid: {
                     display: false,
                 },
             },
-
             y: {
                 grid: {
                     display: false,
@@ -55,19 +50,6 @@ export const WeeklyBarchart = () => {
             },
         },
     };
-
-    // const config = {
-    //   type: "bar",
-    //   data: data,
-    //   options: {
-    //     scales: {
-    //       y: {
-    //         beginAtZero: true,
-    //         Ticks: false,
-    //       },
-    //     },
-    //   },
-    // };
     return (
         <div >
             <Bar data={data} options={options}></Bar>

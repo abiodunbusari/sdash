@@ -1,13 +1,12 @@
-import React, { SetStateAction, useState } from 'react'
-import { FaDatabase } from 'react-icons/fa'
+import React, { useState } from 'react'
+import { Accordion } from '@mantine/core'
+
+import { Log } from './icons'
 import { WeeklyBarchart } from './bar-chart'
 import { MonthlyBarchart } from './monthly-barchart'
-import { Log } from './icons'
-import { Accordion } from '@mantine/core'
 
 export const ActivityChart = () => {
     const [expandedItem, setExpandedItem] = useState<string | null>('customization');
-
     const handleAccordionChange = (value: string) => {
         setExpandedItem(value === expandedItem ? null : value);
     };
@@ -28,7 +27,6 @@ export const ActivityChart = () => {
                     <p className='text-silver text-sm leading-[22px] font-medium tracking-[-0.42px]'>Per Month</p>
                     <MonthlyBarchart />
                 </section>
-
                 <Accordion defaultValue="customization" onChange={handleAccordionChange}
                     value={expandedItem} classNames={{ label: 'text-[#A8A8A8] dark:text-white', item: 'border-none', chevron: 'text-[#121212] w-6 h-6 font-bold' }}>
                     <Accordion.Item value="customization">

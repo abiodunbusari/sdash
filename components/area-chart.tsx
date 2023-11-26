@@ -3,23 +3,30 @@ import { ArrowDown2 } from "iconsax-react";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import { RiCheckboxBlankFill } from "react-icons/ri";
 import { useQuery } from "@tanstack/react-query";
+
 import { builder } from "@/api/builder";
+import dayjs from "dayjs";
+
+function formatValue(number: number) {
+    if (typeof number !== "number") return;
+
+    const million = 1000000;
+    const result = number / million;
+    const roundedResult = Math.round(result);
+    return `${roundedResult}`;
+}
 
 export function AreaBarChart() {
-
     const { data: graphDetails } = useQuery({
         queryFn: () => builder.use().transactions.payout.fetch(),
         queryKey: builder.transactions.payout.fetch.get(),
         select: ({ data }) => data?.data
     })
-    const options: Intl.DateTimeFormatOptions = { month: "short", day: "numeric" };
-
-
     const details = graphDetails?.map((detail) => ({
-
-        name: new Date(detail?.date).toLocaleDateString("en-US", options),
-        uv: detail?.salary_paid,
-        pv: detail?.cash_bond_bought,
+        name: dayjs(detail?.date).format("DD MMM"),
+        uv: formatValue(detail?.cash_bond_bought),
+        pv: formatValue(detail?.salary_paid),
+        amt: formatValue(detail?.salary_paid),
     }))
     return (
         <section className="flex flex-col gap-5">
@@ -57,7 +64,7 @@ export function AreaBarChart() {
                             <stop offset="95%" stopColor="#AF9CED" stopOpacity={0} />
                         </linearGradient>
                     </defs>
-                    <XAxis dataKey="name" color="white" label={{ fill: 'pink' }} />
+                    <XAxis dataKey="name" color="white" />
                     <YAxis dataKey='uv' />
                     <CartesianGrid horizontal={true} vertical={false} />
                     <Area
