@@ -19,10 +19,10 @@ export const InternationalizationSwitch = () => {
                     <Link
                         key={locale}
                         href="/"
-                        locale={locale == 'ar' ? 'Arabic' : 'English'}
+                        locale={locale}
                         className="block"
                         onClick={() => close()}>
-                        {locale}
+                        {locale == 'ar' ? 'Arabic' : 'English'}
                     </Link>
                 ))}
             </Popover.Dropdown>
