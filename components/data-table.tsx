@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { Table } from '@mantine/core';
+import { LoadingOverlay, Table } from '@mantine/core';
 
 import { builder } from '@/api/builder';
 import { Log } from './icons';
@@ -7,7 +7,7 @@ import { useIntl } from 'react-intl';
 
 export function DataTable() {
 
-    const { data: forecast } = useQuery({
+    const { data: forecast, isLoading } = useQuery({
         queryFn: () => builder.use().supplies.forecast.fetch(),
         queryKey: builder.supplies.forecast.fetch.get(),
         select: (data) => data?.data?.data
@@ -56,6 +56,7 @@ export function DataTable() {
                     </tbody>
                 </Table>
             </div>
+            <LoadingOverlay visible={isLoading} overlayBlur={2} />
         </div>
     );
 }
