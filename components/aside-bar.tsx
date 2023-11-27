@@ -75,7 +75,7 @@ const AsideBar = () => {
   ];
 
   return (
-    <aside className="flex flex-col dark:bg-[#191929] gap-[54.78px] px-8 border-r-[3px] border-r-[#E3E3E3] dark:border-r-[#9595b7] pt-[30.25px]">
+    <aside className="flex flex-col max-[600px]:hidden dark:bg-[#191929] gap-[54.78px] px-8 border-r-[3px] border-r-[#E3E3E3] dark:border-r-[#9595b7] pt-[30.25px]">
       <section className="flex flex-col gap-[54.78px]">
         <Logo />
         <section className="flex flex-col gap-[76px] ">
