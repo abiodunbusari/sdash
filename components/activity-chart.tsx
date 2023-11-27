@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Accordion } from '@mantine/core'
 
-import { Log } from './icons'
 import { WeeklyBarchart } from './bar-chart'
-import { MonthlyBarchart } from './monthly-barchart'
+import { MonthlyBarchart } from '.'
+import { Log } from './icons'
 
 export const ActivityChart = () => {
     const [expandedItem, setExpandedItem] = useState<string | null>('customization');
@@ -27,9 +27,9 @@ export const ActivityChart = () => {
                     <p className='text-silver text-sm leading-[22px] font-medium tracking-[-0.42px]'>Per Month</p>
                     <MonthlyBarchart />
                 </section>
-                <Accordion defaultValue="customization" onChange={handleAccordionChange}
+                <Accordion role='select' defaultValue="customization" onChange={handleAccordionChange}
                     value={expandedItem} classNames={{ label: 'text-[#A8A8A8] dark:text-white', item: 'border-none', chevron: 'text-[#121212] w-6 h-6 font-bold' }}>
-                    <Accordion.Item value="customization">
+                    <Accordion.Item value="customization" role='option'>
                         <Accordion.Control>
                             <span aria-hidden="true" className="visually-hidden">
                                 View Per Quarter
@@ -37,9 +37,9 @@ export const ActivityChart = () => {
                         </Accordion.Control>
                     </Accordion.Item>
                 </Accordion>
-                <Accordion defaultValue="customization" onChange={handleAccordionChange}
+                <Accordion role='select' defaultValue="customization" onChange={handleAccordionChange}
                     value={expandedItem} classNames={{ label: 'text-[#A8A8A8] !dark:text-white', item: 'border-none', chevron: 'text-[#121212] w-6 h-6 font-bold' }}>
-                    <Accordion.Item value="customization">
+                    <Accordion.Item value="customization" role='option'>
                         <Accordion.Control><span aria-hidden="true" className="visually-hidden">
                             View Per Year
                         </span></Accordion.Control>

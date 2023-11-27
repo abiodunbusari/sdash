@@ -13,15 +13,13 @@ import AsideBar from './aside-bar'
 const Header = () => {
     const intl = useIntl();
     const user = intl.messages["page.home.header.user"] as string
-    const [_, { close, open }] = useDisclosure(false);
     const [___, { toggle }] = useDisclosure();
     const { theme } = useTheme();
     const [opened, { open: OpenDrawer, close: closeDrawer }] =
         useDisclosure(false);
-    const [showModal, setShowModal] = useState(false);
     return (
         <header>
-            <nav className="bg-[#F7F7FF] dark:bg-[#191929] py-[15px] px-[32px] flex justify-between items-center">
+            <nav className="bg-[#F7F7FF] dark:bg-[#191929] py-[15px] px-[32px] flex justify-between items-center no-scrollbar">
                 <TextInput
                     miw="28%"
                     styles={{
@@ -51,18 +49,16 @@ const Header = () => {
                     classNames={{ input: 'py-[11px]' }}
                 />
                 <section className='gap-[clamp(20px,2vw,32px)] items-center flex '>
-                    <ul className='gap-[clamp(16px,1vw,24px)] items-center flex cursor-pointer'>
+                    <InternationalizationSwitch />
+                    <ul className='gap-[clamp(16px,1vw,24px)] items-center flex cursor-pointer '>
                         <li>
-                            <InternationalizationSwitch />
+                            <Message size={24} color='currentColor' className='max-[980px]:hidden' />
                         </li>
                         <li>
-                            <Message size={24} color='currentColor' className='max-[920px]:hidden' />
+                            <RiSettingsLine size={24} color='currentColor' className='max-[980px]:hidden' />
                         </li>
                         <li>
-                            <RiSettingsLine size={24} color='currentColor' className='max-[920px]:hidden' />
-                        </li>
-                        <li>
-                            <Notification size={24} color='currentColor' className='max-[920px]:hidden' />
+                            <Notification size={24} color='currentColor' className='max-[980px]:hidden' />
                         </li>
                     </ul>
                     <div className='flex items-center gap-[14px]'>
@@ -96,7 +92,7 @@ const Header = () => {
                     onClose={closeDrawer}
                     size={220}
                     withCloseButton={false}
-                    classNames={{ body: "p-0" }}
+                    classNames={{ body: "p-0", content: 'no-scrollbar' }}
                     transitionProps={{ duration: 600 }}>
                     <AsideBar withLogo={false} close={closeDrawer} />
                 </Drawer>

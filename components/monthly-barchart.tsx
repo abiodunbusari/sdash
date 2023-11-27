@@ -54,19 +54,6 @@ export const MonthlyBarchart = () => {
             },
         },
     };
-
-    // const config = {
-    //   type: "bar",
-    //   data: data,
-    //   options: {
-    //     scales: {
-    //       y: {
-    //         beginAtZero: true,
-    //         Ticks: false,
-    //       },
-    //     },
-    //   },
-    // };
     return (
         <div className="bar">
             <Bar data={data} options={options}></Bar>

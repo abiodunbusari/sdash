@@ -25,7 +25,7 @@ export const CardsNews = () => {
                         >
                             <div className=" flex gap-2 items-end">
                                 {idx === 0 ? <Profile2User color="#2F70F2" size={20} /> : idx === 1 ? <CardTransfer /> : <CardIssue />}
-                                <h4
+                                <h4 role="heading"
                                     className={clsx('text-[clamp(10px,1vw,16px)] font-medium', idx === 0 ? 'text-[#2F70F2]' : idx === 1 ? 'text-[#876AFE]' : 'text-[#FFBC02]')}
                                 >
                                     {(item?.name.charAt(0).toUpperCase() + item?.name.slice(1)).split('_').join(' ')}
@@ -33,7 +33,9 @@ export const CardsNews = () => {
                             </div>
                             <div className=" flex gap-[6px] items-center">
                                 <h3 className="text-[#121212] dark:text-white font-semibold text-[clamp(12px,1.9vw,28px)] whitespace-nowrap">
-                                    {item?.current - item?.last_month}
+                                    {idx == 1 && '$'}
+                                    {(item?.current - item?.last_month) / 1000}
+                                    {idx == 0 ? 'M' : idx == 1}
                                 </h3>
                                 <div
                                     className="flex gap-[2px] items-center"

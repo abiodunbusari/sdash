@@ -8,23 +8,26 @@ export const InternationalizationSwitch = () => {
     const [opened, { close }] = useDisclosure(false);
     const { locales } = useRouter()
     return (
-        <Popover width="target" position="bottom" withArrow shadow="md">
+        <Popover width="target" position="bottom" shadow="md" >
             <Popover.Target>
-                <Button className="text-dark-gray dark:text-white text-base max-[980px]:hidden" variant="transparent" component="button">
+                <Button className="text-dark-grey hover:bg-ash-grey dark:hover:bg-none
+                 dark:text-white text-base max-[760px]:hidden" variant="ghost" component="button">
                     Choose language
                 </Button>
             </Popover.Target>
-            <Popover.Dropdown>
-                {[...(locales as string[])].sort().map((locale) => (
-                    <Link
-                        key={locale}
-                        href="/"
-                        locale={locale}
-                        className="block"
-                        onClick={() => close()}>
-                        {locale == 'ar' ? 'Arabic' : 'English'}
-                    </Link>
-                ))}
+            <Popover.Dropdown className='dark:bg-midnight-blue'>
+                <section className="flex flex-col gap-2 ">
+                    {[...(locales as string[])].sort().map((locale) => (
+                        <Link
+                            key={locale}
+                            href="/"
+                            locale={locale}
+                            className="block hover:bg-ash-grey dark:hover:bg-[#353549] rounded-md p-1  dark:text-white"
+                            onClick={() => close()}>
+                            {locale == 'ar' ? 'Arabic' : locale == 'en' ? 'English' : 'French'}
+                        </Link>
+                    ))}
+                </section>
             </Popover.Dropdown>
         </Popover>
     );

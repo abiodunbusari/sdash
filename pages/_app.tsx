@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { IntlProvider, MessageFormatElement } from 'react-intl';
 import ar from '../lang/ar.json'
 import en from '../lang/en.json'
+import fr from '../lang/fr.json'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -17,6 +18,7 @@ const queryClient = new QueryClient({
 const messages = {
   ar,
   en,
+  fr
 };
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

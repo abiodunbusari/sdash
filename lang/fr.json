@@ -1,0 +1,28 @@
+{
+  "page.home.head.title": "Exemple d'internationalisation avec Next.js",
+  "page.home.head.meta.description": "Exemple d'internationalisation avec Next.js - Anglais",
+  "page.home.title": "Bienvenue dans le <b>tutoriel d'internationalisation de Next.js</b>",
+  "page.home.description": "Vous consultez actuellement la page d'accueil en français 🚀",
+  "page.home.sidebar.title": {"dashboard": "Tableau de bord", "customer":"Données client"},
+  "page.home.sidebar.data":{
+    "home": "Accueil",
+    "files": "Fichiers",
+    "deadline_project": "Projet échéance",
+    "management":"Gestion",
+    "database": "Base de données"
+  },
+  "page.home.sidebar.lowerpartdata": {
+    "team" : "Récompense d'équipe",
+    "invoice": "Données de facturation",
+    "settings": "Paramètres",
+    "announcement": "Annonce",
+    "media": "Ressources multimédias",
+    "client":"Avis client"
+  },
+  "page.home.header.user":"Alex Smith",
+  "page.home.header.placeholder": "Rechercher une propriété",
+  "page.home.hero.active-users": {"user":"Utilisateurs actifs", "price":"14,7M", "percent":"32%"},
+  "page.home.hero.active-transactions": ["Transactions", "1 234,10 $", "32%"],
+  "page.home.hero.active.cards.issued": ["Cartes émises", "3 442", "32%"],
+  "page.home.transaction": "Détails de la transaction"
+}
