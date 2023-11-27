@@ -6,9 +6,16 @@ import { useMantineTheme } from "@mantine/core";
 import { useIntl } from "react-intl";
 
 import Logo from "./icons/logo";
+import clsx from "clsx";
 
 
-const AsideBar = () => {
+const AsideBar = ({
+  withLogo,
+  close,
+}: {
+  withLogo?: boolean;
+  close?: () => void;
+}) => {
 
   const theme = useMantineTheme();
   const intl = useIntl();
@@ -75,7 +82,7 @@ const AsideBar = () => {
   ];
 
   return (
-    <aside className="flex flex-col max-[600px]:hidden dark:bg-[#191929] gap-[54.78px] px-8 border-r-[3px] border-r-[#E3E3E3] dark:border-r-[#9595b7] pt-[30.25px]">
+    <aside className={clsx(`flex flex-col dark:bg-[#191929] gap-[54.78px] px-8 border-r-[3px] border-r-[#E3E3E3] dark:border-r-[#9595b7] pt-[30.25px] `, withLogo ? 'max-[760px]:hidden' : '')}>
       <section className="flex flex-col gap-[54.78px]">
         <Logo />
         <section className="flex flex-col gap-[76px] ">

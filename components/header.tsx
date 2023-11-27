@@ -1,15 +1,24 @@
 import { HambergerMenu, Message, Notification, SearchNormal } from 'iconsax-react'
 import { RiSettingsLine } from 'react-icons/ri'
-import { Avatar, TextInput, rem } from '@mantine/core'
+import { Avatar, Burger, Drawer, TextInput, rem } from '@mantine/core'
 import { useIntl } from 'react-intl'
 
 import { InternationalizationSwitch } from '.'
 import { ThemeSwitch } from '@/styles/switcher'
+import { useDisclosure } from '@mantine/hooks'
+import { useTheme } from 'next-themes'
+import { useState } from 'react'
+import AsideBar from './aside-bar'
 
 const Header = () => {
     const intl = useIntl();
-    const placeHolder = intl.messages["page.home.header.title"] as unknown as Record<string, string>
     const user = intl.messages["page.home.header.user"] as string
+    const [_, { close, open }] = useDisclosure(false);
+    const [___, { toggle }] = useDisclosure();
+    const { theme } = useTheme();
+    const [opened, { open: OpenDrawer, close: closeDrawer }] =
+        useDisclosure(false);
+    const [showModal, setShowModal] = useState(false);
     return (
         <header>
             <nav className="bg-[#F7F7FF] dark:bg-[#191929] py-[15px] px-[32px] flex justify-between items-center">
@@ -62,9 +71,35 @@ const Header = () => {
                     </div>
                     <>
                         <ThemeSwitch />
-                        <HambergerMenu size="32" color="currentColor" className='hidden max-[920px]:flex cursor-pointer' />
+                        <Burger
+                            opened={opened}
+                            onClick={() => {
+                                toggle();
+                                OpenDrawer();
+                            }}
+                            aria-label="Toggle navigation"
+                            className="min-[760px]:hidden block relative z-[999] text-dark-gray dark:text-white"
+                            transitionDuration={500}
+                            color={
+                                theme === "light"
+                                    ? "#1F1F1F"
+                                    : theme === "dark"
+                                        ? "white"
+                                        : "#1F1F1F"
+                            }
+                            aria-haspopup="true"
+                        />
                     </>
                 </section>
+                <Drawer
+                    opened={opened}
+                    onClose={closeDrawer}
+                    size={220}
+                    withCloseButton={false}
+                    classNames={{ body: "p-0" }}
+                    transitionProps={{ duration: 600 }}>
+                    <AsideBar withLogo={false} close={closeDrawer} />
+                </Drawer>
             </nav>
         </header>
     )
