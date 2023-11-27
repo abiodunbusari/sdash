@@ -10,7 +10,6 @@ export function DataTable() {
         queryFn: () => builder.use().supplies.forecast.fetch(),
         queryKey: builder.supplies.forecast.fetch.get(),
         select: (data) => data?.data?.data
-
     })
 
     return (
@@ -54,9 +53,7 @@ export function DataTable() {
                         ))}
                     </tbody>
                 </Table>
-
             </div>
-
         </div>
     );
 }

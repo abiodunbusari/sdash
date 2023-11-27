@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Wallet from './icons/wallet'
 import Visa from './icons/visa'
 import MasterCard from './icons/master-card'
@@ -64,7 +65,6 @@ const QuickTransfer = () => {
                     ))
                 }
             </ul>
-
         </article>
     )
 }

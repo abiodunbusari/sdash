@@ -1,11 +1,11 @@
-import Logo from "./icons/logo";
-
 import { FaRegUser } from "react-icons/fa";
 import { PiBriefcaseLight } from "react-icons/pi";
 import { SlLock } from "react-icons/sl";
 import { LuLayoutGrid } from "react-icons/lu";
 import { useMantineTheme } from "@mantine/core";
 import { useIntl } from "react-intl";
+
+import Logo from "./icons/logo";
 
 
 const AsideBar = () => {

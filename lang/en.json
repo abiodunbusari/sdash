@@ -4,16 +4,14 @@
   "page.home.title": "Welcome to <b>Next.js i18n tutorial</b>",
   "page.home.description": "You are currently viewing the homepage in English 🚀",
   "page.home.sidebar.title": {"dashboard": "Dashboard", "customer":"Customer Data"},
-
- "page.home.sidebar.data":{
+  "page.home.sidebar.data":{
   "home": "Home",
   "files": "Files",
   "deadline_project": "Deadline Project",
   "management":"Management",
   "database": "Database"
  },
-  
-  "page.home.sidebar.lowerpartdata": {
+ "page.home.sidebar.lowerpartdata": {
     "team" : "Team Award",
     "invoice": "Invoice Data",
     "settings": "Settings",
