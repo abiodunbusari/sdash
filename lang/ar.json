@@ -23,10 +23,9 @@
   },
 
   "page.home.header.placeholder": "ابحث عن العقار",
-  "page.home.hero.active-transactions": ["المعاملات", "١.٢٣٤.١٠$", "٣٢%"],
-   "page.home.hero.active-users": {"user":"لمستخدمون النشطون", "price":"١٤.٧M", "percent":"٣٢%"},
-  "page.home.hero.active.cards.issued": ["البطاقات المصدرة", "٣.٤٤٢", "٣٢%"],
-  "page.home.header.user":"أليكس سميث",
+  "page.home.transfer":"تحويل سريع",
+  "page.home.activity":  "رسوم النشاط",
+  "page.home.points": "إجمالي النقاط",
   "page.home.transaction": "تفاصيل العملية"
 
 }

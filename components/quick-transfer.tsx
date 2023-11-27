@@ -3,6 +3,7 @@ import React from 'react'
 import Wallet from './icons/wallet'
 import Visa from './icons/visa'
 import MasterCard from './icons/master-card'
+import { useIntl } from 'react-intl'
 
 const data = [
     {
@@ -43,12 +44,14 @@ const data = [
 ]
 
 const QuickTransfer = () => {
+    const intl = useIntl();
+    const transfer = intl.messages["page.home.transfer"] as string
     return (
         <article className='p-5 rounded-xl bg-white dark:bg-[#191929]  flex flex-col gap-[18px] overflow-auto'>
             <div className='flex flex-col gap-4 '>
                 <div className='flex items-center gap-2'>
                     <Wallet />
-                    <h3 className='text-dark-grey dark:text-white text-base font-medium leading-6 tracking-[-0.48px]'>Quick Transfer</h3>
+                    <h3 className='text-dark-grey dark:text-white text-base font-medium leading-6 tracking-[-0.48px]'>{transfer}</h3>
                 </div>
                 <div className='w-full bg-platinum h-[1px]' />
             </div>

@@ -7,7 +7,6 @@ import { InternationalizationSwitch } from '.'
 import { ThemeSwitch } from '@/styles/switcher'
 import { useDisclosure } from '@mantine/hooks'
 import { useTheme } from 'next-themes'
-import { useState } from 'react'
 import AsideBar from './aside-bar'
 
 const Header = () => {

@@ -19,10 +19,10 @@
     "media": "Ressources multimédias",
     "client":"Avis client"
   },
-  "page.home.header.user":"Alex Smith",
-  "page.home.header.placeholder": "Rechercher une propriété",
-  "page.home.hero.active-users": {"user":"Utilisateurs actifs", "price":"14,7M", "percent":"32%"},
-  "page.home.hero.active-transactions": ["Transactions", "1 234,10 $", "32%"],
-  "page.home.hero.active.cards.issued": ["Cartes émises", "3 442", "32%"],
-  "page.home.transaction": "Détails de la transaction"
+   "page.home.transfer":"Transfert Rapide",
+    "page.home.activity":"Graphiques d'activité",
+    "page.home.points": "Points totaux",
+    "page.home.header.user":"Alex Smith",
+    "page.home.header.placeholder": "Rechercher une propriété",
+    "page.home.transaction": "Détails de la transaction"
 }

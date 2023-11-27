@@ -4,8 +4,11 @@ import { Accordion } from '@mantine/core'
 import { WeeklyBarchart } from './bar-chart'
 import { MonthlyBarchart } from '.'
 import { Log } from './icons'
+import { useIntl } from 'react-intl'
 
 export const ActivityChart = () => {
+    const intl = useIntl();
+    const activity = intl.messages["page.home.activity"] as string
     const [expandedItem, setExpandedItem] = useState<string | null>('customization');
     const handleAccordionChange = (value: string) => {
         setExpandedItem(value === expandedItem ? null : value);
@@ -15,7 +18,7 @@ export const ActivityChart = () => {
         <main className='py-7 px-6 flex flex-col gap-4 bg-white dark:bg-[#191929] rounded-xl'>
             <span className='flex items-center gap-2 self-start'>
                 <Log />
-                <p className='text-dark-grey dark:text-white font-medium tracking-[-0.48px] leading-6 text-base'>Activity Charts</p>
+                <p className='text-dark-grey dark:text-white font-medium tracking-[-0.48px] leading-6 text-base'>{activity}</p>
             </span>
             <div className='bg-[#E3E3E3] dark:bg-white   h-[1px] w-full'></div>
             <article className='flex flex-col gap-4'>

@@ -3,6 +3,7 @@ import { Table } from '@mantine/core';
 
 import { builder } from '@/api/builder';
 import { Log } from './icons';
+import { useIntl } from 'react-intl';
 
 export function DataTable() {
 
@@ -11,7 +12,8 @@ export function DataTable() {
         queryKey: builder.supplies.forecast.fetch.get(),
         select: (data) => data?.data?.data
     })
-
+    const intl = useIntl();
+    const point = intl.messages["page.home.point"] as string
     return (
         <div className='flex flex-col gap-7 bg-white dark:bg-[#191929] rounded-xl px-12 py-7 overflow-auto no-scrollbar'>
             <div className='flex gap-5 flex-col'>
@@ -24,7 +26,7 @@ export function DataTable() {
                         View All
                     </p>
                 </div>
-                <div className='w-full h-[1px] bg-[#E3E3E3]'></div>
+                <div className='w-full h-[1px] bg-[#E3E3E3]'>{point}</div>
             </div>
             <div className='overflow-auto no-scrollbar flex flex-1'>
                 <Table highlightOnHover className='flex-1'>
