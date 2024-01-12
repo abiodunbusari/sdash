@@ -16,7 +16,7 @@ export const CardsNews = () => {
     })
     return (
         <main className="overflow-auto no-scrollbar ">
-            <article className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)]  ">
+            <article className="grid grid-cols-[repeat(3,1fr)] gap-[clamp(10px,1.7vw,24px)]">
                 {transactionOverview?.map(
                     (item, idx) => (
                         <section
